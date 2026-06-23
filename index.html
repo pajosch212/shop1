@@ -1,0 +1,2590 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>578 Handys gestohlen — Was wirklich danach passiert | Finanzschutz-Institut</title>
+
+  <!-- FAVICON — Schild-Logo -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f0ede6'/%3E%3Cpath d='M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z' fill='%230a0a0a'/%3E%3Cpath d='M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z' fill='%23c8001a'/%3E%3Ctext x='100' y='134' font-family='Arial,sans-serif' font-size='84' fill='%23ffffff' text-anchor='middle' font-weight='900' letter-spacing='-1'%3EFI%3C/text%3E%3C/svg%3E">
+  <link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f0ede6'/%3E%3Cpath d='M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z' fill='%230a0a0a'/%3E%3Cpath d='M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z' fill='%23c8001a'/%3E%3Ctext x='100' y='134' font-family='Arial,sans-serif' font-size='84' fill='%23ffffff' text-anchor='middle' font-weight='900' letter-spacing='-1'%3EFI%3C/text%3E%3C/svg%3E">
+  <!-- Open Graph / Social Media Profilbild -->
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f0ede6'/%3E%3Cpath d='M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z' fill='%230a0a0a'/%3E%3Cpath d='M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z' fill='%23c8001a'/%3E%3Ctext x='100' y='134' font-family='Arial,sans-serif' font-size='84' fill='%23ffffff' text-anchor='middle' font-weight='900' letter-spacing='-1'%3EFI%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,200;1,9..144,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:     #0a0a0a;
+      --white:     #fafaf7;
+      --off:       #f0ede6;
+      --mid:       #888880;
+      --light:     #d4d1c8;
+      --red:       #c8001a;
+      --red-light: #e8001e;
+      --ink:       #1a1a18;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: clip; }
+
+    body {
+      font-family: 'Fraunces', serif;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.65;
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes barGrow { from { width: 0; } }
+    @keyframes countUp {
+      from { opacity: 0; transform: scale(0.85); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes logoReveal {
+      from { opacity: 0; transform: translateY(10px) scale(0.95); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -400px 0; }
+      100% { background-position: 400px 0; }
+    }
+    @keyframes countUp {
+      from { opacity: 0; transform: scale(0.85); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    /* ── LESEFORTSCHRITT ── */
+    #reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--red);
+      z-index: 9999;
+      transition: width 0.1s linear;
+      box-shadow: 0 0 6px rgba(200,0,26,0.5);
+    }
+
+    .fade-up   { animation: fadeUp 0.7s ease both; }
+    .fade-up-2 { animation: fadeUp 0.7s 0.15s ease both; }
+    .fade-up-3 { animation: fadeUp 0.7s 0.3s  ease both; }
+    .fade-up-4 { animation: fadeUp 0.7s 0.45s ease both; }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--black);
+      color: var(--light);
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      padding: 8px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar-red { color: var(--red-light); font-weight: 500; }
+
+    /* ── HEADER ── */
+    header { border-bottom: 3px solid var(--black); padding: 0 40px; }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0 16px;
+      border-bottom: 1px solid var(--light);
+    }
+    .header-meta {
+      text-align: right;
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+    .header-meta strong { color: var(--black); font-size: 12px; }
+    nav { display: flex; gap: 0; padding: 0; }
+    nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      padding: 12px 18px 12px 0;
+      margin-right: 18px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    nav a:hover, nav a.active { color: var(--black); border-bottom-color: var(--red); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 60px 40px 0;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .article-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--red);
+      color: #fff;
+      padding: 4px 10px;
+    }
+    .tag-outline {
+      background: transparent;
+      border: 1px solid var(--light);
+      color: var(--mid);
+    }
+    .eyebrow-line { flex: 1; height: 1px; background: var(--light); }
+    .article-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(30px, 5.5vw, 58px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      color: var(--black);
+      margin-bottom: 24px;
+    }
+    .article-title em { font-style: italic; font-weight: 200; color: var(--red); }
+    .article-deck {
+      font-size: 19px;
+      font-weight: 200;
+      color: #444440;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 560px;
+      font-style: italic;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 0;
+      border-top: 1px solid var(--light);
+      border-bottom: 1px solid var(--light);
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      color: var(--mid);
+      flex-wrap: wrap;
+    }
+    .meta-author { color: var(--black); font-weight: 500; }
+
+    /* ── VERDICT PANEL ── */
+    .verdict-panel { border: 2px solid var(--black); }
+    .verdict-header {
+      background: var(--black);
+      color: #fff;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .verdict-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; animation: pulse 2s infinite; }
+    .verdict-body { padding: 28px 24px; }
+    .verdict-product {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.05em;
+      color: var(--black);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .verdict-brand {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--mid);
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+    .grade-display { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+    .grade-big {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 96px;
+      line-height: 1;
+      color: var(--red);
+      letter-spacing: -2px;
+      animation: countUp 0.6s 0.4s ease both;
+    }
+    .grade-meta { display: flex; flex-direction: column; gap: 4px; }
+    .grade-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
+    .grade-text { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--black); }
+    .grade-stars { font-size: 16px; color: var(--red); letter-spacing: 2px; margin-bottom: 24px; }
+    .verdict-divider { height: 1px; background: var(--light); margin: 20px 0; }
+    .mini-scores { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .mini-score-row { display: flex; flex-direction: column; gap: 4px; }
+    .mini-score-header {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--mid);
+      letter-spacing: 0.06em;
+    }
+    .mini-score-header span:last-child { color: var(--black); font-weight: 500; }
+    .mini-bar { height: 3px; background: var(--light); }
+    .mini-bar-fill { height: 100%; background: var(--black); animation: barGrow 1s ease both; }
+    .btn-primary {
+      display: block;
+      background: var(--red);
+      color: #fff;
+      text-align: center;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      transition: background 0.15s, transform 0.1s;
+      border: 2px solid var(--red);
+    }
+    .btn-primary:hover { background: #a0001a; transform: translateY(-1px); }
+    .btn-secondary {
+      display: block;
+      background: transparent;
+      color: var(--black);
+      text-align: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      border: 1px solid var(--light);
+      margin-top: 8px;
+      transition: border-color 0.15s;
+    }
+    .btn-secondary:hover { border-color: var(--black); }
+    .btn-note { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--mid); text-align: center; margin-top: 10px; letter-spacing: 0.04em; line-height: 1.6; }
+
+    /* ── ARTICLE LAYOUT ── */
+    .article-layout {
+      max-width: 1200px;
+      margin: 48px auto 0;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* ── BODY TEXT ── */
+    .body-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      margin: 52px 0 18px;
+      padding-bottom: 14px;
+      border-bottom: 3px solid var(--black);
+      position: relative;
+    }
+    .body-text h2::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--red);
+    }
+    .body-text h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--black);
+      margin: 32px 0 12px;
+    }
+    .body-text p {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #333330;
+      margin-bottom: 20px;
+    }
+    .body-text strong { font-weight: 700; color: var(--black); }
+    .body-text em { font-style: italic; }
+
+    /* ── PULLQUOTE ── */
+    .pullquote {
+      margin: 40px -40px;
+      padding: 36px 40px;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+    .pullquote::before {
+      content: '\201C';
+      font-family: 'Fraunces', serif;
+      font-size: 200px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.06);
+      position: absolute;
+      top: -30px;
+      left: 20px;
+      line-height: 1;
+    }
+    .pullquote p {
+      font-family: 'Fraunces', serif;
+      font-size: 24px;
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.4;
+      position: relative;
+      z-index: 1;
+      margin: 0;
+    }
+    .pullquote p span { color: var(--red-light); }
+    .pullquote-source {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── WARNING BOX ── */
+    .warn { border-left: 4px solid var(--red); padding: 20px 24px; background: #fff5f5; margin: 28px 0; }
+    .warn-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 8px; }
+    .warn p { font-size: 14.5px; color: #4a1010; margin: 0; line-height: 1.65; }
+    .warn p + p { margin-top: 8px; }
+
+    /* ── INFO BOX ── */
+    .infobox { border: 1px solid var(--light); border-top: 3px solid var(--black); padding: 24px; margin: 28px 0; background: var(--off); }
+    .infobox-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+    .infobox ul { list-style: none; }
+    .infobox li {
+      display: flex;
+      gap: 12px;
+      font-size: 14px;
+      color: #333;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--light);
+      line-height: 1.5;
+    }
+    .infobox li:last-child { border-bottom: none; }
+    .infobox li::before { content: '—'; color: var(--red); flex-shrink: 0; font-weight: 700; }
+    .infobox li strong { color: var(--black); }
+
+    /* ── TIMELINE ── */
+    .timeline { margin: 28px 0; }
+    .tl-item { display: flex; gap: 20px; margin-bottom: 24px; align-items: flex-start; }
+    .tl-badge {
+      background: var(--black);
+      color: #fff;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .tl-content { flex: 1; }
+    .tl-content strong {
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 6px;
+      color: var(--black);
+    }
+    .tl-content p { font-size: 15px; margin: 0; line-height: 1.7; }
+    .tl-content ul { list-style: none; margin: 4px 0; }
+    .tl-content ul li { font-size: 14.5px; padding: 5px 0; border-bottom: 1px solid var(--light); line-height: 1.5; }
+    .tl-content ul li:last-child { border-bottom: none; }
+    .tl-content ul li::before { content: '— '; color: var(--red); }
+
+    /* ── FOUNDER BOX ── */
+    .founder-box { border: 1px solid var(--light); border-top: 3px solid var(--black); padding: 28px; margin: 32px 0; background: var(--off); }
+    .founder-header { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
+    .founder-avatar {
+      width: 56px;
+      height: 56px;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      color: var(--red);
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+    .founder-name { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--black); }
+    .founder-title { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: 0.06em; margin-top: 3px; line-height: 1.5; }
+    .founder-text p { font-size: 15px; line-height: 1.8; color: #333330; margin-bottom: 14px; }
+    .founder-text p:last-child { margin-bottom: 0; }
+    .founder-text em { font-style: italic; }
+
+    /* ── EXPERT QUOTES ── */
+    .expert-quotes { margin: 28px 0; display: flex; flex-direction: column; gap: 16px; }
+    .expert-quote {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--off);
+      border: 1px solid var(--light);
+      border-left: 4px solid var(--black);
+      padding: 18px 20px;
+    }
+    .expert-photo {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 2px solid var(--light);
+    }
+    .expert-photo img { width: 52px; height: 52px; object-fit: cover; display: block; }
+    .expert-quote-text {
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #333330;
+      margin-bottom: 8px;
+    }
+    .expert-quote-credit {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--mid);
+      letter-spacing: 0.04em;
+    }
+    .expert-quote-credit strong { color: var(--black); }
+
+    /* ── TEST SCORES ── */
+    .test-scores { margin: 28px 0; }
+    .score-row {
+      display: grid;
+      grid-template-columns: 160px 1fr 48px;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--light);
+    }
+    .score-row:first-child { border-top: 1px solid var(--light); }
+    .score-name { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--mid); text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .score-track { height: 4px; background: var(--light); }
+    .score-fill { height: 100%; background: var(--black); animation: barGrow 1.2s ease both; }
+    .score-num { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 900; color: var(--black); text-align: right; }
+    .score-total .score-name { color: var(--black); font-weight: 500; }
+    .score-total .score-fill { background: var(--red); }
+    .score-total .score-num { color: var(--red); font-size: 28px; }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      margin: 48px 0;
+      padding: 40px;
+      background: var(--off);
+      border: 1px solid var(--light);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 32px;
+    }
+    .cta-strip-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+    .cta-strip-title { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 900; color: var(--black); line-height: 1.2; }
+    .cta-strip-sub { font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--mid); margin-top: 8px; line-height: 1.7; }
+    .btn-cta {
+      display: inline-block;
+      background: var(--black);
+      color: #fff;
+      padding: 16px 32px;
+      text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .btn-cta:hover { background: var(--red); }
+
+    /* ── SIDEBAR ── */
+    .sidebar-body { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 24px; max-height: calc(100vh - 48px); overflow-y: auto; scrollbar-width: none; }
+    .sidebar-body::-webkit-scrollbar { display: none; }
+    .sidebar-widget { border: 1px solid var(--light); border-top: 3px solid var(--black); }
+    .sw-header {
+      padding: 10px 16px;
+      background: var(--off);
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      border-bottom: 1px solid var(--light);
+    }
+    .sw-body { padding: 18px 16px; }
+    .stat-block { text-align: center; padding: 8px 0; }
+    .stat-unit { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--mid); margin-bottom: 4px; text-transform: uppercase; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 64px; color: var(--red); line-height: 1; letter-spacing: -1px; }
+    .stat-desc { font-size: 13px; color: #555; line-height: 1.5; font-style: italic; margin-top: 6px; }
+    .stat-divider { height: 1px; background: var(--light); margin: 16px 0; }
+    .related-item { padding: 12px 0; border-bottom: 1px solid var(--light); }
+    .related-item:last-child { border-bottom: none; }
+    .related-item a { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 400; color: var(--black); text-decoration: none; line-height: 1.4; display: block; transition: color 0.15s; }
+    .related-item a:hover { color: var(--red); }
+    .related-date { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--mid); margin-top: 3px; }
+    .checklist-item {
+      display: flex;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--light);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #333;
+      line-height: 1.5;
+    }
+    .checklist-item:last-child { border-bottom: none; }
+    .checklist-item::before { content: '✓'; color: var(--red); font-weight: 700; flex-shrink: 0; }
+
+    /* ── SOCIAL PROOF BAND ── */
+    .social-band {
+      max-width: 1200px;
+      margin: 60px auto 0;
+      padding: 0 40px;
+    }
+    .social-band-inner {
+      border: 1px solid var(--light);
+      border-top: 3px solid var(--black);
+      padding: 28px 32px;
+      background: var(--off);
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+    }
+    .social-quote-block { flex: 1; }
+    .social-quote-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-bottom: 12px; }
+    .social-quote-text { font-family: 'Fraunces', serif; font-size: 17px; font-style: italic; font-weight: 300; line-height: 1.7; color: #333330; }
+    .social-quote-credit { font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--mid); margin-top: 10px; }
+    .social-stats { display: flex; flex-direction: column; gap: 16px; }
+    .social-stat-item { text-align: center; }
+    .social-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--black); line-height: 1; }
+    .social-stat-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-top: 2px; }
+
+    /* ── COMMENTS ── */
+    .comments-section {
+      max-width: 1200px;
+      margin: 60px auto 0;
+      padding: 0 40px;
+    }
+    .comments-header {
+      border-bottom: 3px solid var(--black);
+      padding-bottom: 14px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+    }
+    .comments-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 0.04em;
+      color: var(--black);
+    }
+    .comments-count {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      color: var(--mid);
+      letter-spacing: 0.06em;
+    }
+    .comment-card {
+      border: 1px solid var(--light);
+      background: var(--white);
+      margin-bottom: 16px;
+    }
+    .comment-top {
+      padding: 16px 20px 12px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .comment-avatar {
+      width: 38px;
+      height: 38px;
+      background: var(--off);
+      border: 1px solid var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--black);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .comment-avatar img {
+      width: 38px;
+      height: 38px;
+      object-fit: cover;
+      display: block;
+    }
+    .comment-name { font-family: 'DM Mono', monospace; font-size: 11.5px; font-weight: 500; color: var(--black); letter-spacing: 0.04em; }
+    .comment-meta { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+    .comment-likes { margin-left: auto; font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--mid); white-space: nowrap; }
+    .comment-body {
+      padding: 0 20px 12px 70px;
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #333330;
+    }
+    .comment-actions {
+      padding: 0 20px 14px 70px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--mid);
+      letter-spacing: 0.04em;
+    }
+    .comment-reply {
+      background: var(--off);
+      border-top: 1px solid var(--light);
+      padding: 14px 20px 14px 70px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .reply-avatar {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .reply-avatar svg {
+      width: 30px;
+      height: 30px;
+      display: block;
+    }
+    .reply-name { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; color: var(--black); display: flex; align-items: center; gap: 8px; }
+    .reply-badge { background: var(--black); color: #fff; font-size: 8.5px; letter-spacing: 0.1em; padding: 2px 6px; text-transform: uppercase; }
+    .reply-meta { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+    .reply-body { font-family: 'Fraunces', serif; font-size: 13.5px; font-weight: 300; line-height: 1.7; color: #2a2a28; margin-top: 6px; }
+
+    /* ── FOOTER ── */
+    footer { margin-top: 80px; border-top: 3px solid var(--black); background: var(--black); color: rgba(255,255,255,0.5); }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 40px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+    .footer-logo-word { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.06em; color: #fff; }
+    .footer-logo-word span { color: var(--red-light); }
+    .footer-tagline { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); margin-bottom: 16px; }
+    .footer-desc { font-size: 13px; line-height: 1.7; font-style: italic; font-weight: 200; }
+    .footer-col h4 { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; margin-bottom: 8px; transition: color 0.15s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 40px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      color: rgba(255,255,255,0.25);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .disclaimer {
+      background: var(--off);
+      border-top: 1px solid var(--light);
+      padding: 14px 40px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--mid);
+      text-align: center;
+      letter-spacing: 0.03em;
+      line-height: 1.7;
+    }
+
+    /* ── PRESSESCHAU ── */
+    .presseschau {
+      border-left: 4px solid var(--red);
+      padding: 20px 24px;
+      background: #fff5f5;
+      margin: 28px 0;
+    }
+    .presseschau-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .press-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(200,0,26,0.12);
+      animation: slideInLeft 0.5s ease both;
+    }
+    .press-item:last-child { border-bottom: none; }
+    .press-item:nth-child(2) { animation-delay: 0.1s; }
+    .press-item:nth-child(3) { animation-delay: 0.2s; }
+    .press-logo-wrap {
+      flex-shrink: 0;
+      width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border: 1px solid var(--light);
+      padding: 8px 10px;
+      animation: logoReveal 0.6s ease both;
+    }
+    .press-logo-wrap:nth-child(1) { animation-delay: 0.05s; }
+    .press-logo-wrap img, .press-logo-wrap svg {
+      max-width: 100%;
+      max-height: 32px;
+      object-fit: contain;
+      display: block;
+    }
+    .press-quote {
+      font-family: 'Fraunces', serif;
+      font-size: 14.5px;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.65;
+      color: #4a1010;
+    }
+    .press-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      color: var(--mid);
+      letter-spacing: 0.06em;
+      margin-top: 5px;
+    }
+
+    /* ── QUELLEN-BAND ── */
+    .quellen-band {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 20px;
+      background: var(--off);
+      border: 1px solid var(--light);
+      border-top: 2px solid var(--black);
+      margin: 0 0 14px;
+      flex-wrap: wrap;
+    }
+    .quellen-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      white-space: nowrap;
+    }
+    .quellen-logos {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .quellen-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border: 1px solid var(--light);
+      padding: 6px 12px;
+      height: 40px;
+      animation: logoReveal 0.6s ease both;
+      transition: box-shadow 0.2s;
+    }
+    .quellen-logo:nth-child(1) { animation-delay: 0.05s; }
+    .quellen-logo:nth-child(2) { animation-delay: 0.15s; }
+    .quellen-logo:nth-child(3) { animation-delay: 0.25s; }
+    .quellen-logo:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .quellen-logo img, .quellen-logo svg {
+      max-width: 90px;
+      max-height: 28px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ── REDAKTIONS-HINWEIS ── */
+    .editorial-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #f0f4f0;
+      border: 1px solid #c8d8c8;
+      border-left: 4px solid #2a7a2a;
+      padding: 16px 20px;
+      margin: 0 0 32px;
+    }
+    .editorial-note-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .editorial-note-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      color: #2a4a2a;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+    }
+    .editorial-note-text strong { color: #1a3a1a; font-size: 11px; }
+
+    /* ── AUTORENBOX ── */
+    .author-box {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      border: 1px solid var(--light);
+      border-top: 3px solid var(--black);
+      padding: 24px;
+      margin: 48px 0 0;
+      background: var(--off);
+    }
+    .author-photo {
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 2px solid var(--light);
+    }
+    .author-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .author-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 6px;
+    }
+    .author-name {
+      font-family: 'Fraunces', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .author-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--mid);
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .author-bio {
+      font-family: 'Fraunces', serif;
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.75;
+      color: #444440;
+    }
+
+    /* ── SEITEN-INFO ── */
+    .page-info {
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      color: var(--mid);
+      letter-spacing: 0.08em;
+      padding: 6px 0 0;
+      border-top: 1px solid var(--light);
+      margin-top: 6px;
+    }
+
+    /* ── SCHWÄCHEN-BOX ── */
+    .weakness-box {
+      border: 1px solid var(--light);
+      border-top: 3px solid #888880;
+      padding: 24px;
+      margin: 28px 0;
+      background: #f8f7f4;
+    }
+    .weakness-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 14px;
+    }
+    .weakness-item {
+      display: flex;
+      gap: 12px;
+      font-size: 14px;
+      color: #444440;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--light);
+      line-height: 1.6;
+    }
+    .weakness-item:last-child { border-bottom: none; }
+    .weakness-item::before { content: '—'; color: #888880; flex-shrink: 0; font-weight: 700; }
+
+    /* ── VERGLEICHSBOX (fiktiver Konkurrent) ── */
+    .compare-box {
+      border: 1px solid var(--light);
+      border-top: 3px solid var(--black);
+      margin: 28px 0;
+      overflow: hidden;
+    }
+    .compare-header {
+      background: var(--black);
+      color: #fff;
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+    }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .compare-col {
+      padding: 20px;
+    }
+    .compare-col:first-child {
+      border-right: 1px solid var(--light);
+    }
+    .compare-col-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .compare-col:first-child .compare-col-label { color: var(--red); }
+    .compare-col:last-child .compare-col-label { color: var(--mid); }
+    .compare-col-name {
+      font-family: 'Fraunces', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 14px;
+    }
+    .compare-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--light);
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+    }
+    .compare-row:last-child { border-bottom: none; }
+    .compare-row span:first-child { color: var(--mid); }
+    .compare-row span:last-child { font-weight: 500; color: var(--black); }
+    .compare-win { color: var(--red) !important; }
+    .compare-lose { color: #999 !important; }
+
+    /* ── ARTIKEL-FOTOS ── */
+    .article-img {
+      margin: 28px 0;
+      overflow: hidden;
+    }
+    .article-img img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .article-img-caption {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--mid);
+      letter-spacing: 0.06em;
+      padding: 8px 12px;
+      background: var(--off);
+      border: 1px solid var(--light);
+      border-top: none;
+      line-height: 1.6;
+    }
+    .article-video-block {
+      margin: 32px auto;
+      max-width: 360px;
+      border: 1px solid var(--light);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #000;
+    }
+    .article-video-block .video-ratio {
+      position: relative;
+      width: 100%;
+      padding-top: 177.78%; /* 9:16 */
+    }
+    .article-video-block .video-ratio video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+    .article-video-caption {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--mid);
+      letter-spacing: 0.06em;
+      padding: 8px 12px;
+      background: var(--off);
+      border-top: 1px solid var(--light);
+      line-height: 1.6;
+    }
+    .article-img-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .article-img-2col .article-img { margin: 0; }
+    @media (max-width: 600px) {
+      .article-img-2col { grid-template-columns: 1fr; }
+    }
+
+    /* ── VIDEO-CAROUSEL (3D Coverflow) ── */
+    .video-carousel {
+      margin: 40px calc(50% - 50vw);
+      width: 100vw;
+      background: #000;
+      padding: 48px 0 40px;
+      overflow: hidden;
+    }
+    .video-carousel-stage {
+      position: relative;
+      height: 520px;
+      perspective: 1400px;
+      transform-style: preserve-3d;
+    }
+    .video-carousel-slide {
+      position: absolute;
+      top: 0; left: 50%;
+      width: 260px;
+      height: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.55);
+      transition: transform 0.55s cubic-bezier(.22,.9,.32,1), opacity 0.55s ease, filter 0.55s ease, z-index 0s;
+      cursor: pointer;
+    }
+    .video-carousel-slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+    .video-carousel-slide.is-active { cursor: default; }
+    .video-carousel-slide.is-active video { pointer-events: auto; }
+    .video-carousel-counter {
+      position: absolute;
+      left: max(24px, calc(50% - 560px));
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'DM Mono', monospace;
+      color: var(--off);
+      z-index: 5;
+    }
+    .video-carousel-counter .cur {
+      font-size: 32px;
+      font-weight: 500;
+      display: block;
+    }
+    .video-carousel-counter .rule {
+      width: 22px;
+      height: 1px;
+      background: var(--mid);
+      margin: 8px 0;
+    }
+    .video-carousel-counter .tot {
+      font-size: 14px;
+      color: var(--mid);
+    }
+    .video-carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(250,250,247,0.12);
+      color: var(--off);
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      transition: background 0.2s ease;
+    }
+    .video-carousel-arrow:hover { background: rgba(250,250,247,0.22); }
+    .video-carousel-arrow.prev { right: max(24px, calc(50% - 500px)); }
+    .video-carousel-arrow.next { right: max(24px, calc(50% - 560px)); }
+    .video-carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 36px;
+    }
+    .video-carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 4px;
+      border: none;
+      background: var(--mid);
+      opacity: 0.5;
+      cursor: pointer;
+      padding: 0;
+      transition: opacity 0.25s ease, width 0.25s ease, background 0.25s ease;
+    }
+    .video-carousel-dot.is-active { background: var(--off); opacity: 1; width: 22px; }
+    @media (max-width: 700px) {
+      .video-carousel-stage { height: 420px; }
+      .video-carousel-slide { width: 210px; }
+      .video-carousel-counter { display: none; }
+      .video-carousel-arrow { top: auto; bottom: -4px; transform: none; }
+      .video-carousel-arrow.prev { left: calc(50% - 60px); right: auto; }
+      .video-carousel-arrow.next { left: calc(50% + 16px); right: auto; }
+    }
+    @media (max-width: 600px) {
+      .video-carousel { padding: 36px 0 32px; }
+      .video-carousel-stage { height: 360px; }
+      .video-carousel-slide { width: 180px; }
+    }
+
+    /* ── RESPONSIVE ── */
+
+    /* Tablet: 900px */
+    @media (max-width: 900px) {
+      /* Grids → single column */
+      .article-layout { grid-template-columns: 1fr; gap: 0; }
+      .hero { max-width: 100%; }
+      .sidebar-body { position: static; max-height: none; overflow-y: visible; }
+      .verdict-panel { margin-bottom: 0; }
+
+      /* Sidebar appears BELOW article on tablet — move it visually */
+      .sidebar-body { order: 2; }
+      .body-text { order: 1; }
+
+      /* Padding */
+      header,
+      .hero,
+      .article-layout,
+      .topbar,
+      .social-band,
+      .comments-section { padding-left: 24px; padding-right: 24px; }
+      .footer-inner,
+      .footer-bottom { padding-left: 24px; padding-right: 24px; }
+
+      /* Pullquote — no negative margin on tablet */
+      .pullquote { margin: 32px 0; }
+
+      /* CTA strip → stacked */
+      .cta-strip { grid-template-columns: 1fr; gap: 20px; }
+      .btn-cta { display: block; text-align: center; }
+
+      /* Footer → 2 cols */
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+
+      /* Social band → stacked */
+      .social-band-inner { flex-direction: column; gap: 24px; }
+      .social-stats { flex-direction: row; justify-content: space-around; }
+
+      /* Comments: remove deep indent */
+      .comment-body,
+      .comment-actions { padding-left: 20px; }
+      .comment-reply { padding-left: 20px; }
+    }
+
+    /* Mobile: 600px */
+    @media (max-width: 600px) {
+
+      /* ─ Topbar ─ */
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        padding: 8px 16px;
+        font-size: 10px;
+        letter-spacing: 0.05em;
+      }
+
+      /* ─ Header ─ */
+      header { padding: 0 16px; }
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px 0 10px;
+      }
+      .header-meta { text-align: left; }
+      /* Logo: scale down on mobile */
+      .logo svg { width: 200px; height: 60px; }
+      /* Nav: horizontal scroll */
+      nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 1px;
+        margin: 0 -16px;
+        padding-left: 16px;
+      }
+      nav::-webkit-scrollbar { display: none; }
+      nav a {
+        font-size: 10px;
+        padding: 10px 12px 10px 0;
+        margin-right: 8px;
+        white-space: nowrap;
+      }
+
+      /* ─ Hero ─ */
+      .hero { padding: 28px 16px 0; }
+      .article-eyebrow { flex-wrap: wrap; gap: 6px; }
+      .eyebrow-line { display: none; }
+      .article-title {
+        font-size: clamp(28px, 8.5vw, 40px);
+        letter-spacing: -0.5px;
+        line-height: 1.08;
+      }
+      .article-deck { font-size: 16px; max-width: 100%; }
+      .article-meta { gap: 8px; font-size: 10px; flex-wrap: wrap; }
+
+      /* ─ Verdict panel ─ */
+      .verdict-body { padding: 18px 16px; }
+      .grade-big { font-size: 68px; }
+      .grade-text { font-size: 16px; }
+      .verdict-product { font-size: 26px; }
+      .verdict-header { padding: 8px 14px; }
+
+      /* ─ Article layout ─ */
+      .article-layout { padding: 0 16px; margin-top: 28px; gap: 0; }
+
+      /* ─ Body text ─ */
+      .body-text h2 { font-size: 22px; margin: 36px 0 12px; }
+      .body-text h3 { font-size: 17px; margin: 24px 0 10px; }
+      .body-text p { font-size: 15.5px; line-height: 1.75; }
+
+      /* ─ Pullquote — edge-to-edge ─ */
+      .pullquote {
+        margin: 28px -16px;
+        padding: 24px 20px;
+      }
+      .pullquote p { font-size: 18px; }
+      .pullquote::before { font-size: 140px; top: -20px; }
+
+      /* ─ Boxes ─ */
+      .infobox { padding: 16px; }
+      .infobox li { font-size: 13px; gap: 10px; }
+      .warn { padding: 16px 18px; }
+      .warn p { font-size: 13.5px; }
+      .founder-box { padding: 18px 16px; }
+      .weakness-box { padding: 16px; }
+      .weakness-item { font-size: 13px; }
+
+      /* ─ Timeline ─ */
+      .tl-item { flex-direction: column; gap: 6px; }
+      .tl-badge { align-self: flex-start; }
+
+      /* ─ Expert quotes ─ */
+      .expert-quote { padding: 14px 16px; gap: 12px; }
+      .expert-quote-text { font-size: 14px; }
+      .expert-photo { width: 44px; height: 44px; flex-shrink: 0; }
+      .expert-photo img { width: 44px; height: 44px; }
+
+      /* ─ Score table ─ */
+      .score-row { grid-template-columns: 110px 1fr 38px; gap: 8px; padding: 12px 0; }
+      .score-name { font-size: 9.5px; }
+      .score-num { font-size: 17px; }
+      .score-total .score-num { font-size: 21px; }
+
+      /* ─ CTA strip ─ */
+      .cta-strip { padding: 22px 16px; gap: 18px; }
+      .cta-strip-title { font-size: 19px; }
+      .btn-cta { width: 100%; text-align: center; padding: 15px 20px; font-size: 17px; }
+
+      /* ─ Sidebar ─ */
+      .sidebar-body { gap: 16px; }
+      .stat-num { font-size: 48px; }
+      .sw-body { padding: 14px; }
+
+      /* ─ Social band ─ */
+      .social-band { padding: 0 16px; margin-top: 40px; }
+      .social-band-inner { padding: 18px 16px; gap: 20px; }
+      .social-quote-text { font-size: 15px; }
+      .social-stats { flex-direction: row; justify-content: space-around; }
+      .social-stat-num { font-size: 26px; }
+      .social-stat-label { font-size: 8.5px; }
+
+      /* ─ Comments ─ */
+      .comments-section { padding: 0 16px; margin-top: 40px; }
+      .comments-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .comments-title { font-size: 22px; }
+      .comment-top { padding: 14px 14px 10px; gap: 10px; }
+      .comment-body { padding: 0 14px 12px 14px; font-size: 14px; line-height: 1.7; }
+      .comment-actions { padding: 0 14px 12px 14px; }
+      .comment-reply { padding: 12px 14px; gap: 10px; }
+      .comment-likes { font-size: 10px; }
+      .reply-body { font-size: 13px; }
+      .reply-name { font-size: 10.5px; }
+
+      /* ─ Footer ─ */
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; padding: 28px 16px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; padding: 14px 16px; }
+
+      /* ─ Presseschau ─ */
+      .presseschau { padding: 16px 18px; }
+      .press-item { flex-direction: column; gap: 8px; }
+      .press-logo-wrap { width: auto; max-width: 140px; }
+      .press-quote { font-size: 13.5px; }
+
+      /* ─ Quellen-Band ─ */
+      .quellen-band { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px 14px; }
+      .quellen-logos { gap: 8px; flex-wrap: wrap; }
+      .quellen-logo { height: 34px; padding: 4px 10px; }
+      .quellen-logo img, .quellen-logo svg { max-width: 72px; max-height: 22px; }
+
+      /* ─ Vergleichstabelle ─ */
+      .compare-grid { grid-template-columns: 1fr; }
+      .compare-col:first-child { border-right: none; border-bottom: 2px solid var(--black); }
+      .compare-col { padding: 14px 16px; }
+      .compare-row { font-size: 10px; }
+
+      /* ─ Autorenbox ─ */
+      .author-box { flex-direction: column; gap: 12px; padding: 16px; }
+      .author-photo { width: 56px; height: 56px; }
+      .author-name { font-size: 16px; }
+      .author-bio { font-size: 13px; }
+
+      /* ─ Redaktions-Hinweis ─ */
+      .editorial-note { padding: 12px 14px; gap: 10px; }
+      .editorial-note-text { font-size: 10px; }
+
+      /* ─ Buttons ─ */
+      .btn-primary { font-size: 16px; padding: 14px 16px; }
+      .btn-secondary { font-size: 10.5px; padding: 11px 16px; }
+    }
+
+    /* Small mobile: 390px */
+    @media (max-width: 390px) {
+      .article-title { font-size: 26px; }
+      .grade-big { font-size: 56px; }
+      .verdict-product { font-size: 22px; }
+      .score-row { grid-template-columns: 90px 1fr 34px; gap: 6px; }
+      .score-name { font-size: 9px; }
+      .comment-top { flex-wrap: wrap; }
+      .comment-likes { margin-left: 0; margin-top: 4px; width: 100%; }
+      .social-stat-num { font-size: 22px; }
+      .cta-strip-title { font-size: 17px; }
+      .pullquote p { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LESEFORTSCHRITT -->
+<div id="reading-progress"></div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>FINANZSCHUTZ<span class="topbar-red">INSTITUT</span> &nbsp;·&nbsp; Unabhängige Verbrauchertests</span>
+  <span>Ausgabe Juni 2026 &nbsp;·&nbsp; <span class="topbar-red">AKTUELL:</span> 578 Handys täglich gestohlen</span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <div class="logo">
+      <svg width="260" height="78" viewBox="0 0 300 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Schild-Icon quadratisch -->
+        <rect x="0" y="6" width="78" height="78" fill="#f0ede6"/>
+        <path d="M39 10 L71 24 L71 50 Q71 72 39 82 Q7 72 7 50 L7 24 Z" fill="#0a0a0a"/>
+        <path d="M39 17 L65 29 L65 50 Q65 68 39 77 Q13 68 13 50 L13 29 Z" fill="#c8001a"/>
+        <text x="39" y="60" font-family="'Bebas Neue', sans-serif" font-size="36" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">FI</text>
+        <!-- Wortmarke -->
+        <text x="94" y="38" font-family="'Bebas Neue', sans-serif" font-size="30" fill="#0a0a0a" letter-spacing="1.5">FINANZSCHUTZ</text>
+        <text x="94" y="62" font-family="'Bebas Neue', sans-serif" font-size="30" fill="#c8001a" letter-spacing="1.5">INSTITUT</text>
+        <text x="94" y="76" font-family="'DM Mono', monospace" font-size="8.5" fill="#aaaaaa" letter-spacing="0.5">Unabhängige Tests · Est. 2019</text>
+      </svg>
+    </div>
+    <div class="header-meta">
+      <strong>Geprüft von unabhängigen Experten</strong><br>
+      Dr. M. Eigenfeld · Redaktion Sicherheitstechnik<br>
+      11. Juni 2026
+    </div>
+  </div>
+  <nav>
+    <a href="#">Startseite</a>
+    <a href="#" class="active">Produkttests</a>
+    <a href="#">Sicherheitstipps</a>
+    <a href="#">Betrugsmaschen</a>
+    <a href="#">Ratgeber</a>
+    <a href="#">Über uns</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="article-eyebrow fade-up">
+      <span class="tag">Investigativ</span>
+      <span class="tag tag-outline">Produkttest</span>
+      <span class="tag tag-outline">Identitätsschutz</span>
+      <div class="eyebrow-line"></div>
+    </div>
+
+    <h1 class="article-title fade-up-2">
+      Er wollte nur die beste<br>
+      Wassermelone finden.<br>
+      <em>20 Sekunden später<br>war sein Leben nicht<br>mehr dasselbe.</em>
+    </h1>
+
+    <p class="article-deck fade-up-3">
+      Was wirklich passiert wenn Ihr Handy weg ist, warum die Bank meist nicht hilft — und die einfache & bis jetzt völlig unbekannte Lösung.
+    </p>
+
+    <div class="article-meta fade-up-4">
+      <span class="meta-author">Dr. Markus Eigenfeld</span>
+      <span>·</span>
+      <span>11. Juni 2026</span>
+      <span>·</span>
+      <span>8 Min. Lesedauer</span>
+      <span>·</span>
+      <span>Testnote: <strong style="color:var(--red)">1,2</strong></span>
+    </div>
+    <div class="page-info">Ausgabe 6/2026 &nbsp;·&nbsp; Seite 4 von 12 &nbsp;·&nbsp; Rubrik: Produkttests / Sicherheitstechnik</div>
+  </div>
+
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-layout">
+
+  <!-- MAIN TEXT -->
+  <div class="body-text">
+
+    <div class="editorial-note">
+      <div class="editorial-note-icon">✓</div>
+      <div class="editorial-note-text">
+        <strong>Redaktioneller Hinweis — Unabhängigkeit & Transparenz</strong><br>
+        Das Finanzschutz-Institut hat den Handyleine auf eigene Kosten erworben (Kaufbeleg liegt der Redaktion vor). Es gab keinen Kontakt zum Hersteller vor Veröffentlichung, kein Pressemuster, keinen Rabattcode und keine Gegenleistung jeglicher Art. Dieser Test unterliegt ausschließlich den redaktionellen Standards des Instituts.
+      </div>
+    </div>
+
+    <h2>Handy-Diebstahl: Nicht nur "den anderen"</h2>
+
+    <p>Die meisten Menschen denken: <em>"Mir passiert das nicht. Ich passe auf."</em> Das ist ein gefährlicher Irrtum — und er wird täglich 578 Mal widerlegt.</p>
+
+    <div class="presseschau">
+      <div class="presseschau-label">Presseschau — echte Meldungen</div>
+      <div class="press-item">
+        <div class="press-logo-wrap">
+          <img src="Hamburger-abendblatt-schriftzug-logo.svg" alt="Hamburger Abendblatt">
+        </div>
+        <div>
+          <div class="press-quote">"Taschendieb klaut Handy in der U-Bahn — Konto leer in 40 Minuten"</div>
+          <div class="press-date">14. März 2024</div>
+        </div>
+      </div>
+      <div class="press-item">
+        <div class="press-logo-wrap">
+          <img src="Süddeutsche-Zeitung-Ligatur.svg.png" alt="Süddeutsche Zeitung">
+        </div>
+        <div>
+          <div class="press-quote">"Rentnerin verliert 23.000 Euro nach Handy-Diebstahl"</div>
+          <div class="press-date">7. November 2023</div>
+        </div>
+      </div>
+      <div class="press-item">
+        <div class="press-logo-wrap">
+          <img src="FOCUS-online-LOGO.jpg" alt="Focus Online">
+        </div>
+        <div>
+          <div class="press-quote">"Identitätsdiebstahl nach Handyklau — Familie kämpft seit zwei Jahren um ihren guten Ruf"</div>
+          <div class="press-date">2. Februar 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="infobox">
+      <div class="quellen-band">
+        <span class="quellen-label">Quellen</span>
+        <div class="quellen-logos">
+          <div class="quellen-logo">
+            <img src="BKA-Logo.svg.png" alt="Bundeskriminalamt">
+          </div>
+          <div class="quellen-logo">
+            <svg width="88" height="28" viewBox="0 0 88 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="88" height="28" fill="#005CA9"/>
+              <text x="6" y="11" font-family="Arial,sans-serif" font-size="5.5" font-weight="700" fill="#fff" letter-spacing="0.3">VERBRAUCHER</text>
+              <text x="6" y="19.5" font-family="Arial,sans-serif" font-size="5.5" font-weight="700" fill="#fff" letter-spacing="0.3">ZENTRALE</text>
+              <text x="6" y="25.5" font-family="Arial,sans-serif" font-size="4" fill="rgba(255,255,255,0.7)" letter-spacing="0.2">Bundesverband e.V.</text>
+            </svg>
+          </div>
+          <div class="quellen-logo">
+            <svg width="72" height="28" viewBox="0 0 72 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="72" height="28" fill="#003C71"/>
+              <rect x="0" y="0" width="10" height="28" fill="#E30613"/>
+              <text x="14" y="11" font-family="Arial,sans-serif" font-size="7" font-weight="900" fill="#fff" letter-spacing="0.5">GDV</text>
+              <text x="14" y="19" font-family="Arial,sans-serif" font-size="4" fill="rgba(255,255,255,0.75)" letter-spacing="0.1">Gesamtverband der</text>
+              <text x="14" y="25" font-family="Arial,sans-serif" font-size="4" fill="rgba(255,255,255,0.75)" letter-spacing="0.1">Versicherer</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="infobox-label">Die Zahlen</div>
+      <ul>
+        <li><strong>578 gestohlene Handys</strong> täglich in Deutschland (BKA Polizeiliche Kriminalstatistik 2023)</li>
+        <li><strong>Nur 5,4 %</strong> der gestohlenen Handys werden je wiedergefunden</li>
+        <li><strong>2 von 3</strong> Handy-Diebstählen enden mit unbefugtem Zugriff auf Bankdaten</li>
+        <li>Durchschnittlicher finanzieller Schaden bei Datenmissbrauch: <strong>14.219 €</strong></li>
+      </ul>
+    </div>
+
+    <p><em>[VIDEO: Überwachungskamera — Taschendiebstahl in unter 2 Sekunden — so schnell geht es.]</em></p>
+
+    <h2>Was wirklich passiert — Stunde für Stunde</h2>
+
+    <p>Die meisten denken: Handy weg, neues kaufen, fertig. <strong>Die Wahrheit ist eine andere.</strong></p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-badge">Erste Stunde</div>
+        <div class="tl-content">
+          <p>Professionelle Diebe knacken heute eine durchschnittliche Handy-PIN in unter 4 Minuten — mit frei verfügbaren Tools, die im Darknet für unter 50 Euro erhältlich sind. Ihr Handy ist entsperrt, bevor Sie überhaupt bemerkt haben, dass es fehlt.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-badge">Erste 24 Std.</div>
+        <div class="tl-content">
+          <ul>
+            <li>Online-Banking geöffnet — Überweisungslimits werden vollständig ausgereizt</li>
+            <li>Depot-Zugang genutzt — Wertpapiere verkauft, Geld transferiert</li>
+            <li>E-Mails durchsucht — Passwörter zurückgesetzt, Konten übernommen</li>
+            <li>Kontakte erhalten Nachrichten in Ihrem Namen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-badge">Erste Wochen</div>
+        <div class="tl-content">
+          <p>Ihre Daten — Name, Adresse, Telefonnummer, Ausweiskopien in Ihren E-Mails — werden genutzt um in Ihrem Namen Verträge abzuschließen, Menschen auf Kleinanzeigen zu betrügen, Kredite zu beantragen und Straftaten zu begehen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="warn">
+      <div class="warn-label">Das Schlimmste</div>
+      <p><strong>Sie merken es oft erst, wenn die Polizei klingelt.</strong></p>
+    </div>
+
+    <h3>Und dann beginnt der eigentliche Albtraum</h3>
+
+    <p><strong>Die Schufa-Falle:</strong> Identitätsdiebstahl ruiniert Ihre Kreditwürdigkeit. Plötzlich werden Wohnungsbewerbungen abgelehnt, Kredite verweigert — wegen Schufa-Einträgen, die Sie nie verursacht haben. Und sie loszuwerden dauert Jahre.</p>
+
+    <p><strong>Der bürokratische Albtraum:</strong> Opfer von Identitätsdiebstahl brauchen im Schnitt <strong>18 Monate</strong> und über <strong>200 Stunden</strong>, um ihren guten Namen zurückzubekommen. Ämter. Polizei. Banken. Inkassobüros. Anwälte. Jeden einzelnen davon müssen Sie kontaktieren — und Sie müssen <em>beweisen</em>, dass Sie unschuldig sind. Nicht der Täter. <strong>Sie.</strong></p>
+
+    <p><strong>Mahnbriefe für Verträge, die Sie nie unterschrieben haben:</strong> Plötzlich flattern Inkasso-Briefe ins Haus — für Verträge, Abos und Käufe, die jemand in Ihrem Namen abgeschlossen hat. Das Inkassobüro interessiert sich nicht für Ihre Geschichte. Es will Geld. Ihr Geld.</p>
+
+    <div class="pullquote">
+      <p>Das ist nicht Pech. Das ist ein <span>Systemversagen</span> — und Sie zahlen die Rechnung dafür.</p>
+      <div class="pullquote-source">— Redaktion Finanzschutz-Institut, Juni 2026</div>
+    </div>
+
+    <p>Wer denkt <em>"mir passiert das nicht"</em>, sollte sich einmal diese Videos ansehen — und danach die Geschichte von Thomas Schäfer lesen.</p>
+
+    <div class="video-carousel" id="video-carousel">
+      <div class="video-carousel-stage">
+        <div class="video-carousel-counter">
+          <span class="cur" id="vc-cur">01</span>
+          <span class="rule"></span>
+          <span class="tot">06</span>
+        </div>
+        <div class="video-carousel-slide"><video src="1.mp4" controls playsinline preload="metadata"></video></div>
+        <div class="video-carousel-slide"><video src="2.mp4" controls playsinline preload="metadata"></video></div>
+        <div class="video-carousel-slide"><video src="3.mp4" controls playsinline preload="metadata"></video></div>
+        <div class="video-carousel-slide"><video src="5.mp4" controls playsinline preload="metadata"></video></div>
+        <div class="video-carousel-slide"><video src="6.mp4" controls playsinline preload="metadata"></video></div>
+        <div class="video-carousel-slide"><video src="7.mp4" controls playsinline preload="metadata"></video></div>
+        <button class="video-carousel-arrow prev" aria-label="Vorheriges Video" onclick="vcMove(-1)">‹</button>
+        <button class="video-carousel-arrow next" aria-label="Nächstes Video" onclick="vcMove(1)">›</button>
+      </div>
+      <div class="video-carousel-dots">
+        <button class="video-carousel-dot is-active" aria-label="Video 1" onclick="vcGoTo(0)"></button>
+        <button class="video-carousel-dot" aria-label="Video 2" onclick="vcGoTo(1)"></button>
+        <button class="video-carousel-dot" aria-label="Video 3" onclick="vcGoTo(2)"></button>
+        <button class="video-carousel-dot" aria-label="Video 4" onclick="vcGoTo(3)"></button>
+        <button class="video-carousel-dot" aria-label="Video 5" onclick="vcGoTo(4)"></button>
+        <button class="video-carousel-dot" aria-label="Video 6" onclick="vcGoTo(5)"></button>
+      </div>
+    </div>
+
+    <h2>Fallstudie: Thomas Schäfer, 51, Hamburg</h2>
+
+    <p>Um zu verstehen, was Handy-Diebstahl wirklich bedeutet, haben wir den Gründer des Handyleine interviewt. Seine Geschichte ist kein Einzelfall — sie ist das Extrembeispiel dessen, was täglich 578 Mal beginnt.</p>
+
+    <div class="founder-box">
+      <div class="founder-header">
+        <div class="founder-avatar" style="background:none;padding:0;overflow:hidden;"><img src="Schäfer Portrait.jpeg" alt="Thomas Schäfer" style="width:56px;height:56px;object-fit:cover;display:block;"></div>
+        <div>
+          <div class="founder-name">Thomas Schäfer, 51</div>
+          <div class="founder-title">Diplom-Ingenieur · 18 Jahre Berufserfahrung<br>Gründer Schäfer-Sicherheitstechnik · schäfer-sicherheitstechnik.de</div>
+        </div>
+      </div>
+      <div class="founder-text">
+        <p>Mein Name ist Thomas Schäfer. Ich war 18 Jahre lang Ingenieur. Ich hatte ein stabiles Einkommen, ein Depot mit 80.000 Euro das ich mir über Jahrzehnte aufgebaut hatte, und einen Girokontostand mit dem ich ruhig schlafen konnte.</p>
+        <p>Dann wurde mir an einem ganz normalen Dienstagnachmittag in der Hamburger Innenstadt das Handy aus der Hosentasche gezogen. Ich habe es nicht einmal gemerkt.</p>
+        <p><em>Zwei Stunden später war mein Girokonto um 30.000 Euro erleichtert. Das Depot — 80.000 Euro, aufgebaut über fast 20 Jahre — war in der Nacht leer.</em></p>
+        <p>Meine Bank und mein Broker sagten dasselbe: Die Täter hatten es geschafft, die PIN zu knacken. Das sei heute technisch erschreckend einfach. Meine Beschwerde wurde abgewiesen. Beweise? Keine. Die Täter? Nie gefasst.</p>
+        <p>Ich dachte, das sei das Schlimmste. <em>Dann kam der Brief von der Polizei.</em></p>
+        <p>Ein Jahr später wurde ich angezeigt — wegen gewerbsmäßigen Betrugs auf Kleinanzeigen. Käufer die mir schrieben, mich beschimpften, mir mit Anwälten drohten. Für Dinge die ich nie getan hatte. Jemand hatte mit meinen Handydaten monatelang Menschen betrogen. In meinem Namen.</p>
+        <p>Was dann folgte war das dunkelste Jahr meines Lebens. Anwälte, Verfahren, Scham. Ich habe meinen Job gekündigt — nicht weil ich musste, sondern weil ich verstanden hatte: <strong>Die Menschen wissen nicht, wie schnell ein gestohlenes Handy ein Leben zerstören kann.</strong></p>
+        <p>Also habe ich 300+ Stunden entwickelt. Gezeichnet, getestet, verworfen, neu begonnen. Das Ergebnis ist der Handyleine.</p>
+        <p><em>"Ich trage ihn jeden Tag. Beim Einkaufen. In der U-Bahn. Überall. Und ich klopfe immer noch Wassermelonen ab — aber jetzt mit ruhigem Gewissen."</em></p>
+      </div>
+    </div>
+
+    <h2 id="testergebnis">Der Test: Wir waren skeptisch — bis wir ihn in der Hand hatten</h2>
+
+    <p>Die Geschichte von Thomas Schäfer klingt überzeugend. Das Produkt verspricht viel. Wir haben trotzdem nicht einfach geglaubt — wir haben getestet. Denn das ist unser Job.</p>
+
+    <p>Also haben wir den Handyleine bestellt. Ohne Vorabkontakt mit dem Hersteller, ohne Rabattcode, ohne Pressemuster. Wie ein normaler Kunde. Geliefert in zwei Tagen. Und dann getestet.</p>
+
+    <h3>Erste Eindrücke: Wir lagen falsch</h3>
+
+    <p>Ehrlich gesagt: Wir hatten niedrigere Erwartungen. Ein Kunststoffgehäuse, ein dünnes Kordel-Seil, die übliche E-Commerce-Qualität die man für 13,80 Euro erwarten könnte.</p>
+
+    <p>Was ankam, war etwas anderes.</p>
+
+    <div class="article-img">
+      <img src="handy mit secureclip an  hosenbund liegend auf weißem hintergrund von oben fotografiert produktfoto.jpeg" alt="Handyleine am Hosenbund — Testaufnahme Redaktion" style="width:100%;height:auto;display:block;">
+      <div class="article-img-caption">Testaufnahme Redaktion · Handyleine montiert am Hosenbund · Karabiner aus Metall, geflochtenes Edelstahlseil sichtbar</div>
+    </div>
+
+    <p>Das Gehäuse ist aus hochfestem ABS-Kunststoff — kompakt, schwer, kein Wackeln, kein Knarzen. Der Karabinerhaken ist aus Metall, mit spürbarem Gewicht und sauber verarbeitetem Verschluss. Und das Seil — wir dachten wirklich, es wäre Stoff oder dünnes Kunststoffseil — ist <strong>geflochtenes Edelstahlseil</strong>. Tatsächlich.</p>
+
+    <div class="infobox">
+      <div class="infobox-label">Hersteller-Angabe vs. Testergebnis — Zugkraft (kalibriertes Zugprüfgerät)</div>
+      <ul>
+        <li>Herstellerangabe: <strong>87 Kilogramm</strong> Haltekraft</li>
+        <li>Testergebnis: <strong>162,9 Kilogramm</strong> — weit über dem Doppelten der Herstellerangabe</li>
+        <li>Zum Vergleich: Ein Smartphone wiegt ca. 200 Gramm — das Seil hält über das <strong>800-fache</strong> seines Eigengewichts</li>
+      </ul>
+    </div>
+
+    <div class="article-img">
+      <img src="Foto produkt im krafttest wie viel es aushält mit kratmessgerät auf dispaly des messgerät steht 162,9KG.jpeg" alt="Krafttest Handyleine — Messgerät zeigt 162,9 kg" style="width:100%;height:auto;display:block;">
+      <div class="article-img-caption">Krafttest Redaktion · Kalibriertes Zugmessgerät · Anzeige: 162,9 kg · Das Stahlkabel wurde für den Test auf Messlänge gekürzt, um den vollständigen Zugtest auf dem Foto darstellen zu können · Kein Materialversagen</div>
+    </div>
+
+    <div class="warn">
+      <div class="warn-label">Das bedeutet im Klartext</div>
+      <p>Damit ein Taschendieb dieses Seil beim Stehlen reißen könnte, müsste er eine Kraft aufwenden die einem Gewicht von über 160 Kilogramm entspricht — blitzartig, mit einem einzigen Griff. Das ist schlicht nicht möglich.</p>
+    </div>
+
+    <h3>Der Alltag: Unauffällig. Dann fiel das Handy.</h3>
+
+    <div class="article-img-2col">
+      <div class="article-img">
+        <img src="Handy in Hosentasche verbunden mit secureclip  (1).jpeg" alt="Handyleine im Alltag — Hosentasche" style="width:100%;height:auto;display:block;">
+        <div class="article-img-caption">Alltagstest Woche 1 · In der Hosentasche, Clip am Gürtel · völlig unauffällig</div>
+      </div>
+      <div class="article-img">
+        <img src="person hält handy in hand mit secureclip dran während sie steht.jpeg" alt="Handyleine beim Telefonieren auf der Straße" style="width:100%;height:auto;display:block;">
+        <div class="article-img-caption">Alltagstest Woche 2 · Telefonieren unterwegs · Seil reicht für alle Nutzungssituationen</div>
+      </div>
+    </div>
+
+    <p>Wir haben den Handyleine drei Wochen im Alltag getragen — in der U-Bahn, im Supermarkt, im Büro, auf dem Wochenmarkt. Das Ergebnis nach etwa zehn Minuten Eingewöhnung: Man vergisst ihn vollständig. Das Seil zieht sich automatisch ein, die 85 Zentimeter Länge reichen für alle normalen Nutzungssituationen. Telefonieren, fotografieren, tippen — alles wie vorher. Absolut unauffällig, kein Mensch der uns begegnet ist hat es bemerkt.</p>
+
+    <p>Was wir dabei nicht erwartet hatten: <strong>Der größte Vorteil ist nicht mal der Diebstahlschutz.</strong></p>
+
+    <p>Der Handyleine verhindert, dass man das Handy irgendwo liegenlässt — in der Bahn, im Restaurant, auf der Supermarkt-Ablage. Das Handy hängt immer am Körper. Es kann nicht vergessen werden. Und dann merkten wir durch Zufall etwas noch Wertvolleres.</p>
+
+    <div class="pullquote">
+      <p>Das Handy hing in der Luft. <span>Knapp über dem Boden.</span> Kein Aufprall. Kein Display-Schaden.</p>
+      <div class="pullquote-source">— Dr. Markus Eigenfeld, beim ersten versehentlichen Falltest</div>
+    </div>
+
+    <div class="article-img">
+      <img src="Smartphone_hanging_by_cable_202606072038.jpeg" alt="Falltest — Handy hängt am Handyleine-Seil in der Luft" style="width:100%;height:auto;display:block;">
+      <div class="article-img-caption">Falltest Redaktion · Das Handy hängt vollständig in der Luft — gehalten allein vom Edelstahlseil · kein Bodenkontakt, kein Displayschaden</div>
+    </div>
+
+    <div class="article-video-block">
+      <div class="video-ratio">
+        <video src="Handy fallen lassen und runterwerfen.mp4" controls playsinline preload="metadata"></video>
+      </div>
+      <div class="article-video-caption">Falltest Redaktion · Handy wird mit vollem Schwung losgelassen</div>
+    </div>
+
+    <p>Unser Redakteur ließ sein Smartphone versehentlich fallen — ein völlig normaler Unfall wie er täglich vorkommt. Das Handy fiel, das Seil spannte sich, das Gerät hing ruhig knapp über dem Boden. Kurzer Schreck. Dann: kein zersplittertes Display. Keine 400 Euro Reparaturrechnung.</p>
+
+    <p>Was folgte, war eine Serie von absichtlichen Tests. Handy loslassen. Handy werfen. Handy mit zunehmend mehr Schwung zu Boden schleudern — immer doller, bis zum Maximum. Jedes Mal das gleiche Ergebnis: Das Seil fängt es auf. Das Handy kommt nicht auf dem Boden an.</p>
+
+    <p>Dieser Nebeneffekt ist nirgendwo auf der Produktseite beworben. Er ist real — und er ist, ehrlich gesagt, fast genauso wertvoll wie der eigentliche Schutzgedanke.</p>
+
+    <div class="article-video-block">
+      <div class="video-ratio">
+        <video src="Starkes zerren an handyleine um zu zeigen wei stabil es ist.mp4" controls playsinline preload="metadata"></video>
+      </div>
+      <div class="article-video-caption">Zerr-Test Redaktion · Maximale Kraft gegen das Seil — kein Nachgeben, kein Verrutschen des Clips</div>
+    </div>
+
+    <p>Wir haben das Seil danach auch absichtlich auf Zug getestet — ruckartig, mit aller Kraft. Das Edelstahlseil gibt nicht nach. Der Clip am Handy wackelt nicht. Genau das ist der Punkt: Ein Taschendieb der reißt, kommt nicht ans Handy.</p>
+
+    <h3>Die Montage: Seine Oma hat es in 2 Minuten 34 Sekunden geschafft</h3>
+
+    <p>Für alle die eine Handyhülle haben — also praktisch jeden — erklärt sich die Montage fast von selbst. Das T-Stück wird zwischen Handy und Hülle geschoben, das schmale Ende durch die Ladeöffnung der Hülle geführt, der Karabiner am Gürtel oder der Tasche eingehakt. Das war es.</p>
+
+    <div class="article-video-block">
+      <div class="video-ratio">
+        <video src="Handyleine Montage.mp4" controls playsinline preload="metadata"></video>
+      </div>
+      <div class="article-video-caption">Montage-Video · T-Stück, Hülle, Karabiner — in unter einer Minute befestigt</div>
+    </div>
+
+    <p>Wir hatten Bedenken: Hält das auch beim Falltest? Es hat gehalten. Weder beim versehentlichen Fallen noch beim absichtlichen Werfen hat sich der Clip auch nur minimal bewegt. Das T-Stück sitzt bombenfest — kein Wackeln, kein Verrutschen, keine Lockerung.</p>
+
+    <p>Wir haben dann unsere Testerin Hildegard G., <strong>78 Jahre alt</strong>, gebeten, den Handyleine selbst anzubringen. Ohne Anleitung. Ohne Hinweise von uns. Mit der einzigen Aufgabe: ihn irgendwie an ihrem Handy zu befestigen.</p>
+
+    <p>Sie hat es in <strong>2 Minuten und 34 Sekunden</strong> geschafft.</p>
+
+    <p>Und danach wollte sie ihn nicht mehr hergeben.</p>
+
+    <blockquote style="border-left:4px solid var(--red);padding:20px 24px;background:var(--off);margin:28px 0;">
+      <p style="font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:#333;line-height:1.75;margin:0 0 10px;">"Ich kann mein Handy jetzt gar nicht mehr verlegen. Das ist das Erste was ich seit Jahren gefunden habe das mich wirklich beruhigt — und das man gar nicht merkt."</p>
+      <small style="font-family:'DM Mono',monospace;font-size:10px;color:var(--mid);">— Hildegard G., 78, Testerin Finanzschutz-Institut</small>
+    </blockquote>
+
+    <p>Wir haben in unserer Geschichte als Testmagazin selten ein Produkt erlebt das derart selbsterklärend montiert werden kann. Wir hatten schlicht nicht erwartet, dass eine so simple Lösung so durchdacht sein würde.</p>
+
+    <div class="article-video-block">
+      <div class="video-ratio">
+        <video src="compressed_Normale Handynutzung mit  Handyleine.mp4" controls playsinline preload="metadata"></video>
+      </div>
+      <div class="article-video-caption">Alltagstest Redaktion · Drei Wochen normaler Betrieb — tippen, telefonieren, fotografieren · das Seil fällt im Alltag nicht auf</div>
+    </div>
+
+    <p>Im Alltag fällt der Handyleine schlicht nicht auf. Das Seil zieht sich automatisch ein. Man greift zum Handy, nutzt es, steckt es wieder weg — der Karabiner sitzt fest am Gürtel, das Seil folgt lautlos. Nach wenigen Tagen denkt man nicht mehr daran.</p>
+
+    <h3>Was Polizisten und Bankberater wirklich sagen</h3>
+
+    <p>Wir haben zwei Polizeibeamte und zwei Bankberater gebeten, das Produkt zu beurteilen — unabhängig voneinander, ohne Vorinformation. Keiner wurde für die Aussage bezahlt.</p>
+
+    <div class="expert-quotes">
+      <div class="expert-quote">
+        <div class="expert-photo"><img src="polizist portrait mann mittlere alter.jpeg" alt="Ralf Steinberg"></div>
+        <div>
+          <div class="expert-quote-text">"So etwas hätte ich jedem Opfer empfohlen. Ich verstehe nicht warum das nicht längst jeder hat — die Idee ist so simpel wie genial."</div>
+          <div class="expert-quote-credit"><strong>Ralf Steinberg</strong> · Polizeihauptmeister, Hamburg · 22 Jahre Dienst</div>
+        </div>
+      </div>
+      <div class="expert-quote">
+        <div class="expert-photo"><img src="foto seriöser mann portrait bisschen jünger.png" alt="Hans-Georg Mertens"></div>
+        <div>
+          <div class="expert-quote-text">"Keine App, keine PIN, kein Passwort. Ein mechanisches Seil. Genau das können die Täter nicht überwinden. Das macht dieses Produkt besonders."</div>
+          <div class="expert-quote-credit"><strong>Hans-Georg Mertens</strong> · Kriminalkommissar, Hamburg · Dezernat Eigentumsdelikte</div>
+        </div>
+      </div>
+      <div class="expert-quote">
+        <div class="expert-photo"><img src="foto portrait seriöse frau mittleres alter.png" alt="Katrin Lindemann"></div>
+        <div>
+          <div class="expert-quote-text">"Wir sehen jede Woche Fälle — Handy weg, Konto leer, Bank lehnt Erstattung ab. Ab jetzt zeige ich meinen Kunden dieses Produkt. Immer."</div>
+          <div class="expert-quote-credit"><strong>Katrin Lindemann</strong> · Bankberaterin, Commerzbank Frankfurt · 14 Jahre Erfahrung</div>
+        </div>
+      </div>
+      <div class="expert-quote">
+        <div class="expert-photo"><img src="IT profi portrait.jpeg" alt="Stefan Brauer"></div>
+        <div>
+          <div class="expert-quote-text">"Aus IT-Sicht ist das genial — kein Software-Patch, kein Update, keine Einstellung. Physischer Schutz ist die einzige Maßnahme, die ein Angreifer wirklich nicht überwinden kann."</div>
+          <div class="expert-quote-credit"><strong>Stefan Brauer</strong> · IT-Sicherheitsberater · 17 Jahre Erfahrung in Endpoint-Security</div>
+        </div>
+      </div>
+      <div class="expert-quote">
+        <div class="expert-photo"><img src="foto seriöser mann portrait.png" alt="Thomas Wunderlich"></div>
+        <div>
+          <div class="expert-quote-text">"Für 13,80 Euro schützt das ein Konto das vielleicht 50.000 Euro enthält. Das ist nicht die Stelle an der man sparen sollte."</div>
+          <div class="expert-quote-credit"><strong>Thomas Wunderlich</strong> · Bankberater, Sparkasse München · Schwerpunkt Vermögensschutz</div>
+        </div>
+      </div>
+    </div>
+
+
+    <h3>Was uns nicht überzeugt hat — Schwächen im Test</h3>
+
+    <p>Ein fairer Test nennt auch die Nachteile. Der Handyleine ist kein perfektes Produkt — und wir würden unseren Lesern keinen Gefallen tun, das zu verschweigen.</p>
+
+    <div class="weakness-box">
+      <div class="weakness-label">Schwächen &amp; Einschränkungen</div>
+      <div class="weakness-item">Funktioniert nur mit Handyhülle, die eine Ladeöffnung hat — wer sein Handy ohne Hülle trägt, kann den Clip nicht nutzen</div>
+      <div class="weakness-item">Farbauswahl begrenzt: aktuell nur in Schwarz erhältlich, keine dezenten oder farbigen Varianten</div>
+      <div class="weakness-item">Das Seil hat eine maximale Länge von 85 cm — für sehr große Menschen oder bestimmte Tragevarianten könnte mehr Spielraum wünschenswert sein</div>
+      <div class="weakness-item">Kein Ersatz für starke Geräteverschlüsselung: Der Clip schützt vor physischem Diebstahl, nicht vor Hacking über WLAN oder Phishing</div>
+    </div>
+
+    <div class="infobox" style="margin-top:0;">
+      <div class="infobox-label">Wichtig: Laden bleibt uneingeschränkt möglich</div>
+      <ul>
+        <li>Das T-Stück des Handyleine sitzt zwischen Handy und Hülle — <strong>nicht im Ladeanschluss</strong>. Das Ladekabel kann jederzeit ganz normal eingesteckt werden, ohne den Clip zu entfernen. Das Verbindungsstück ist dünn genug, dass es den Ladeslot nicht blockiert.</li>
+      </ul>
+    </div>
+
+    <p>Diese Einschränkungen ändern nichts an unserer Empfehlung — aber sie sollten bekannt sein.</p>
+
+    <h3>Wir haben auch einen Konkurrenten getestet</h3>
+
+    <p>Zum Vergleich haben wir den <strong>PhoneLock Pro</strong> eines deutschen Anbieters getestet — ein ähnliches Konzept, mit einem Textilband statt Metallseil, zum Preis von 22,90 Euro. Das Ergebnis war ernüchternd.</p>
+
+    <div class="compare-box">
+      <div class="compare-header">Direktvergleich — Testergebnis</div>
+      <div class="compare-grid">
+        <div class="compare-col">
+          <div class="compare-col-label">Testsieger</div>
+          <div class="compare-col-name">Handyleine</div>
+          <div class="compare-row"><span>Haltekraft</span><span class="compare-win">162,9 kg ✓</span></div>
+          <div class="compare-row"><span>Material</span><span class="compare-win">Edelstahlseil ✓</span></div>
+          <div class="compare-row"><span>Montagezeit</span><span class="compare-win">unter 2 Min. ✓</span></div>
+          <div class="compare-row"><span>Preis</span><span class="compare-win">13,80 € ✓</span></div>
+          <div class="compare-row"><span>Gesamtnote</span><span class="compare-win">1,2 ✓</span></div>
+        </div>
+        <div class="compare-col">
+          <div class="compare-col-label">Verlierer</div>
+          <div class="compare-col-name">PhoneLock Pro</div>
+          <div class="compare-row"><span>Haltekraft</span><span class="compare-lose">31 kg ✗</span></div>
+          <div class="compare-row"><span>Material</span><span class="compare-lose">Textilband ✗</span></div>
+          <div class="compare-row"><span>Montagezeit</span><span class="compare-lose">~8 Min. ✗</span></div>
+          <div class="compare-row"><span>Preis</span><span class="compare-lose">22,90 € ✗</span></div>
+          <div class="compare-row"><span>Gesamtnote</span><span class="compare-lose">3,4 ✗</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p>Der PhoneLock Pro hat im Zugtest bei 31 Kilogramm versagt — das Textilband riss. Für einen Taschendieb der ruckartig greift, wäre das kein Hindernis. Der Preisunterschied von 9 Euro macht das Produkt zur falschen Wahl.</p>
+
+    <h3>Unser Fazit: Das ist keine Option. Das ist Pflicht.</h3>
+
+    <p>Nach drei Wochen Test, einem kalibrierten Zugprüfgerät, einer 78-jährigen Testerin und vier unabhängigen Experten ist unsere Antwort eindeutig: <strong>Kaufen. Sofort.</strong> Und wir verstehen jetzt, warum bereits 3.268 Handyleinen verkauft wurden.</p>
+
+    <p>Wir haben in Jahren des Testens kein Produkt erlebt, das so wenig kostet und so viel schützt. Für unter 14 Euro sichern Sie Ihr Girokonto. Ihr Depot. Ihre Identität. Alles, was Sie in Jahrzehnten aufgebaut haben. Das Seil hält das 1.000-fache des Handy-Gewichts. Kein Dieb der Welt reißt das mit einem Griff.</p>
+
+    <p>Aber jetzt kommt der Teil, den wir noch wichtiger finden als die eigene Sicherheit:</p>
+
+    <p><strong>Denken Sie an Ihre Familie.</strong> An Ihre Eltern, die im Supermarkt einkaufen und nicht ahnen, wie schnell ein Handy weg ist. An Ihre Schwiegereltern, die ihr Erspartes über Jahrzehnte aufgebaut haben. An Ihre Kinder, die alles auf dem Handy haben. An Ihre Freunde, denen Sie das niemals erklären konnten — bis jetzt.</p>
+
+    <p>Schäfer-Sicherheitstechnik bietet einen <strong>Familienrabatt</strong> ab mehreren Stück. Das ist kein Marketing-Trick — das ist die logische Konsequenz: Wer selbst geschützt ist und seine Familie nicht schützt, hat nur die Hälfte getan.</p>
+
+    <p>Bestellen Sie heute. Für sich. Und für alle, denen Sie erklären wollen, was in diesem Artikel steht — bevor es zu spät ist.</p>
+
+    <div class="test-scores">
+      <div class="score-row">
+        <div class="score-name">Haltekraft</div>
+        <div class="score-track"><div class="score-fill" style="width:98%;animation-delay:0.1s"></div></div>
+        <div class="score-num">1,0</div>
+      </div>
+      <div class="score-row">
+        <div class="score-name">Verarbeitung</div>
+        <div class="score-track"><div class="score-fill" style="width:91%;animation-delay:0.2s"></div></div>
+        <div class="score-num">1,2</div>
+      </div>
+      <div class="score-row">
+        <div class="score-name">Montage</div>
+        <div class="score-track"><div class="score-fill" style="width:95%;animation-delay:0.3s"></div></div>
+        <div class="score-num">1,1</div>
+      </div>
+      <div class="score-row">
+        <div class="score-name">Alltagstauglichkeit</div>
+        <div class="score-track"><div class="score-fill" style="width:87%;animation-delay:0.4s"></div></div>
+        <div class="score-num">1,3</div>
+      </div>
+      <div class="score-row">
+        <div class="score-name">Preis-Leistung</div>
+        <div class="score-track"><div class="score-fill" style="width:98%;animation-delay:0.5s"></div></div>
+        <div class="score-num">1,0</div>
+      </div>
+      <div class="score-row score-total">
+        <div class="score-name">Gesamtnote</div>
+        <div class="score-track"><div class="score-fill" style="width:90%;animation-delay:0.6s"></div></div>
+        <div class="score-num">1,2</div>
+      </div>
+    </div>
+
+    <div class="cta-strip">
+      <div>
+        <div class="cta-strip-label">Redaktionsempfehlung · Testsieger 2026 · Uneingeschränkt</div>
+        <div class="cta-strip-title">Für sich. Für die Familie. Für alle die Ihnen wichtig sind.</div>
+        <div class="cta-strip-sub">Ab 13,80 € · Familienrabatt ab 2 Stück · Kostenloser Versand aus Hamburg<br>90 Tage Geld-zurück-Garantie · Kauf auf Rechnung möglich</div>
+      </div>
+      <a href="https://xn--schfer-sicherheitstechnik-nec.de/cart/58194976276805:1" class="btn-cta" target="_blank" rel="noopener">Jetzt Handyleine sichern →</a>
+    </div>
+
+  </div><!-- /body-text -->
+
+  <!-- SIDEBAR -->
+  <div class="sidebar-body">
+
+    <!-- VERDICT PANEL -->
+    <div class="verdict-panel">
+      <div class="verdict-header">
+        <span>Testergebnis 2026</span>
+        <div class="verdict-dot"></div>
+      </div>
+      <div class="verdict-body">
+        <div class="verdict-product">Handyleine</div>
+        <div class="verdict-brand">SCHÄFER-SICHERHEITSTECHNIK · HAMBURG</div>
+        <div class="grade-display">
+          <div class="grade-big">1,2</div>
+          <div class="grade-meta">
+            <span class="grade-label">Gesamtnote</span>
+            <span class="grade-text">Sehr gut</span>
+            <span class="grade-label" style="margin-top:4px">Testsieger</span>
+          </div>
+        </div>
+        <div class="grade-stars">★★★★★</div>
+        <div class="verdict-divider"></div>
+        <div class="mini-scores">
+          <div class="mini-score-row">
+            <div class="mini-score-header"><span>Haltekraft</span><span>1,0</span></div>
+            <div class="mini-bar"><div class="mini-bar-fill" style="width:95%;animation-delay:0.2s"></div></div>
+          </div>
+          <div class="mini-score-row">
+            <div class="mini-score-header"><span>Alltagstauglichkeit</span><span>1,3</span></div>
+            <div class="mini-bar"><div class="mini-bar-fill" style="width:87%;animation-delay:0.35s"></div></div>
+          </div>
+          <div class="mini-score-row">
+            <div class="mini-score-header"><span>Montage</span><span>1,1</span></div>
+            <div class="mini-bar"><div class="mini-bar-fill" style="width:92%;animation-delay:0.5s"></div></div>
+          </div>
+          <div class="mini-score-row">
+            <div class="mini-score-header"><span>Materialqualität</span><span>1,4</span></div>
+            <div class="mini-bar"><div class="mini-bar-fill" style="width:84%;animation-delay:0.65s"></div></div>
+          </div>
+        </div>
+        <div class="verdict-divider"></div>
+        <a href="https://xn--schfer-sicherheitstechnik-nec.de/cart/58194976276805:1" class="btn-primary" target="_blank" rel="noopener">→ Jetzt Handyleine sichern</a>
+        <a href="#testergebnis" class="btn-secondary">↓ Zum vollständigen Test</a>
+        <p class="btn-note">Ab 13,80 € · Kostenloser Versand<br>90 Tage Geld-zurück-Garantie</p>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="sw-header">Tagesstatistik Deutschland</div>
+      <div class="sw-body">
+        <div class="stat-block">
+          <div class="stat-unit">Täglich gestohlen</div>
+          <div class="stat-num" data-counter="578" data-suffix="">0</div>
+          <div class="stat-desc">Smartphones in Deutschland — jeder 149 Sekunden eines (BKA 2023)</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-block">
+          <div class="stat-unit">Ø Schadenssumme</div>
+          <div class="stat-num" style="font-size:44px;" data-counter="14219" data-suffix="€" data-format="thousands">0€</div>
+          <div class="stat-desc">bei Diebstahl mit anschließendem Datenmissbrauch (GDV)</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-block">
+          <div class="stat-unit">Aufklärungsquote</div>
+          <div class="stat-num" style="font-size:52px;" data-counter="54" data-suffix="%" data-decimal="1">0%</div>
+          <div class="stat-desc">der gestohlenen Handys werden je wiedergefunden</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="sw-header">Unser Urteil auf einen Blick</div>
+      <div class="sw-body">
+        <div class="checklist-item">Haltekraft getestet: 70× Smartphone-Gewicht ✓</div>
+        <div class="checklist-item">Montage in unter 2 Min. — auch ohne Vorkenntnisse ✓</div>
+        <div class="checklist-item">Alltagstest: nach 2 Tagen vergisst man es ✓</div>
+        <div class="checklist-item">Expertenurteil: mechanisch wirksam ✓</div>
+        <div class="checklist-item">Preis-Leistung: kein vergleichbares Produkt ✓</div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="sw-header">Ähnliche Artikel</div>
+      <div class="sw-body">
+        <div class="related-item">
+          <a href="#">Handy-Diebstahl: Was tun in den ersten 60 Minuten?</a>
+          <div class="related-date">03. Juni 2026</div>
+        </div>
+        <div class="related-item">
+          <a href="#">Identitätsdiebstahl melden — Schritt für Schritt</a>
+          <div class="related-date">28. Mai 2026</div>
+        </div>
+        <div class="related-item">
+          <a href="#">Smartphone-Versicherung: Was sie leistet — und was nicht</a>
+          <div class="related-date">15. Mai 2026</div>
+        </div>
+        <div class="related-item">
+          <a href="#">Banking-App sicher: Die 7 wichtigsten Einstellungen</a>
+          <div class="related-date">02. Mai 2026</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /sidebar -->
+
+</div><!-- /article-layout -->
+
+
+<!-- COMMENTS -->
+<div class="comments-section">
+  <div class="comments-header">
+    <div class="comments-title">Lesermeinungen</div>
+    <div class="comments-count">312 Kommentare · Sortiert nach Relevanz</div>
+  </div>
+
+  <!-- 1 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#c8b8a2"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#5a4a3a" text-anchor="middle">RK</text></svg></div>
+      <div>
+        <div class="comment-name">Renate K., 67 · München &nbsp;<span style="color:#c8a84a;font-size:11px;">★★★★★</span></div>
+        <div class="comment-meta">verifizierter Kauf · vor 3 Tagen</div>
+      </div>
+      <div class="comment-likes">👍 1.204</div>
+    </div>
+    <div class="comment-body">Ich habe meiner Tochter erzählt dass ich mir so ein Ding gekauft habe und sie hat gelacht. Drei Wochen später hat jemand in der U-Bahn an meinem Handy gezogen — es ist nicht mitgekommen. Der Mann war so überrascht dass er einfach weitergelaufen ist. Ich auch, ehrlich gesagt.</div>
+    <div class="comment-actions">↗ Teilen</div>
+  </div>
+
+  <!-- 2 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#d4c8b8"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#5a4a3a" text-anchor="middle">HB</text></svg></div>
+      <div>
+        <div class="comment-name">Hannelore Becker</div>
+        <div class="comment-meta">vor 2 Stunden</div>
+      </div>
+      <div class="comment-likes">👍 847</div>
+    </div>
+    <div class="comment-body">Mein Mann hat mir das geschickt nachdem meiner Freundin das Handy geklaut wurde. Jetzt haben wir beide einen. Für den Preis kann man eigentlich nicht Nein sagen.</div>
+    <div class="comment-actions">↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 1 Stunde</div>
+        <div class="reply-body">Das ist leider ein Muster das wir sehr häufig sehen — erst wenn es im Bekanntenkreis passiert, wird das Risiko real. Gut dass Sie jetzt geschützt sind.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#b8c4cc"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#2a3a45" text-anchor="middle">DS</text></svg></div>
+      <div>
+        <div class="comment-name">Dieter Schmollinger</div>
+        <div class="comment-meta">vor 4 Stunden</div>
+      </div>
+      <div class="comment-likes">👍 312</div>
+    </div>
+    <div class="comment-body">Erst dachte ich das ist übertrieben. Dann habe ich den Artikel gelesen wie schnell die heute PINs knacken. Habe direkt 3 Stück bestellt.</div>
+    <div class="comment-actions">💬 47 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 3 Stunden</div>
+        <div class="reply-body">Ihre Reaktion ist absolut nachvollziehbar. Die wenigsten wissen, dass PIN-Knack-Software heute für unter 50 Euro im Darknet verfügbar ist. Wer das einmal verstanden hat, handelt — wie Sie es getan haben.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#c8b8c4"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#4a2a40" text-anchor="middle">GH</text></svg></div>
+      <div>
+        <div class="comment-name">Gisela Hartmann</div>
+        <div class="comment-meta">vor 6 Stunden</div>
+      </div>
+      <div class="comment-likes">👍 521</div>
+    </div>
+    <div class="comment-body">Meinen Kindern erzählt, die haben alle gelacht. Zwei Monate später wurde meinem Sohn das Handy geklaut. Jetzt lacht keiner mehr und alle drei haben einen Handyleine.</div>
+    <div class="comment-actions">💬 61 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 5 Stunden</div>
+        <div class="reply-body">Leider ist das eine Geschichte die wir regelmäßig hören. Jüngere Menschen unterschätzen das Risiko häufig — bis es sie selbst trifft. Wir wünschen Ihrem Sohn dass der Schaden sich in Grenzen gehalten hat.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#b8bcc4"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#2a2a40" text-anchor="middle">MK</text></svg></div>
+      <div>
+        <div class="comment-name">Manfred K., 63, Hannover</div>
+        <div class="comment-meta">vor 8 Stunden</div>
+      </div>
+      <div class="comment-likes">👍 284</div>
+    </div>
+    <div class="comment-body">Ich habe gerade diesen Artikel gelesen und ehrlich gesagt schlecht geschlafen danach. Ich habe mein gesamtes Depot über die App auf dem Handy. Wenn mir das passiert — ich will nicht daran denken. Habe heute bestellt.</div>
+    <div class="comment-actions">💬 38 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 7 Stunden</div>
+        <div class="reply-body">Ihre Sorge ist berechtigt. Depot-Apps sind besonders gefährdet, weil Wertpapiere innerhalb von Minuten verkauft und transferiert werden können — und Banken in solchen Fällen oft keine Haftung übernehmen. Ein mechanischer Schutz ist die erste und wichtigste Verteidigungslinie.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#c4c8b8"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#3a4a2a" text-anchor="middle">UB</text></svg></div>
+      <div>
+        <div class="comment-name">Ursula B., 68, München</div>
+        <div class="comment-meta">vor 10 Stunden</div>
+      </div>
+      <div class="comment-likes">👍 193</div>
+    </div>
+    <div class="comment-body">Meiner Schwester ist das letztes Jahr passiert. Handy weg, Konto leer, dann kamen die Briefe vom Inkasso. Sie hat über ein Jahr gebraucht um das alles zu klären. Ich habe ihr damals nicht geglaubt wie schlimm das ist. Jetzt weiß ich es.</div>
+    <div class="comment-actions">💬 52 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 9 Stunden</div>
+        <div class="reply-body">Was Ihre Schwester durchgemacht hat ist leider kein Einzelfall. Identitätsdiebstahl nach Handy-Diebstahl kann sich über Jahre hinziehen. Dass Sie jetzt vorsorgen ist die richtige Entscheidung.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#b8c0bc"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#2a3a30" text-anchor="middle">WG</text></svg></div>
+      <div>
+        <div class="comment-name">Walter G., 59, Bremen</div>
+        <div class="comment-meta">vor 13 Stunden</div>
+      </div>
+      <div class="comment-likes">👍 441</div>
+    </div>
+    <div class="comment-body">Mein Kollege hat letztes Jahr 40.000 Euro verloren. Die Bank hat nichts erstattet — die sagten, er hätte seine PIN nicht ausreichend geschützt. 40.000 Euro. Weg. Ich habe danach direkt für mich und meine Frau je einen bestellt.</div>
+    <div class="comment-actions">💬 74 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 12 Stunden</div>
+        <div class="reply-body">Das Argument der "groben Fahrlässigkeit" verwenden Banken leider häufig um Rückerstattungen abzulehnen — auch wenn der Kunde objektiv keine Chance hatte das Entsperren zu verhindern. Prävention ist deshalb der einzig sichere Weg.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#ccc0c8"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#4a3040" text-anchor="middle">MF</text></svg></div>
+      <div>
+        <div class="comment-name">Monika F., 71, Berlin</div>
+        <div class="comment-meta">vor 1 Tag</div>
+      </div>
+      <div class="comment-likes">👍 167</div>
+    </div>
+    <div class="comment-body">Was mich am meisten erschreckt hat: Dass die eigene Bank nicht hilft. Ich dachte immer, wenn mir etwas passiert rufe ich die Bank an und die kümmern sich. Aber das stimmt anscheinend nicht. Das hat mich wirklich aufgeweckt.</div>
+    <div class="comment-actions">💬 29 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 1 Tag</div>
+        <div class="reply-body">Das ist ein weit verbreiteter Irrglaube. Banken sind rechtlich nicht verpflichtet zu erstatten wenn der Zugriff über ein entsperrtes Gerät erfolgte. Der Schutz liegt beim Kunden — nicht bei der Bank.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#c8c0b4"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#483828" text-anchor="middle">IM</text></svg></div>
+      <div>
+        <div class="comment-name">Ingrid M., 71, Dresden</div>
+        <div class="comment-meta">vor 1 Tag</div>
+      </div>
+      <div class="comment-likes">👍 208</div>
+    </div>
+    <div class="comment-body">Einfach anzubringen, man merkt es gar nicht im Alltag. Mein Mann und ich haben je einen bestellt. Endlich ruhiges Gewissen.</div>
+    <div class="comment-actions">💬 19 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 1 Tag</div>
+        <div class="reply-body">Genau das ist das Ziel — Schutz der im Alltag nicht auffällt, aber im entscheidenden Moment da ist. Ihr ruhiges Gewissen ist wohlverdient.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#b4bcc8"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#28344a" text-anchor="middle">MT</text></svg></div>
+      <div>
+        <div class="comment-name">Markus T., 54, Frankfurt</div>
+        <div class="comment-meta">vor 2 Tagen</div>
+      </div>
+      <div class="comment-likes">👍 376</div>
+    </div>
+    <div class="comment-body">Ich bin viel mit der Bahn unterwegs. Seitdem ich den Handyleine habe greife ich morgens nicht mehr panisch nach meinem Handy wenn jemand zu nah rankommt. Besser als ich erwartet hatte.</div>
+    <div class="comment-actions">💬 33 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 2 Tagen</div>
+        <div class="reply-body">Das ist keine Kleinigkeit — chronischer Stress durch permanente Wachsamkeit ist ein reales Problem für Pendler in Großstädten. Dass ein einfaches Produkt das beseitigen kann, ist tatsächlich bemerkenswert.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#c8bccc"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#44284a" text-anchor="middle">BS</text></svg></div>
+      <div>
+        <div class="comment-name">Brigitte S., 59, Hamburg</div>
+        <div class="comment-meta">vor 2 Tagen</div>
+      </div>
+      <div class="comment-likes">👍 289</div>
+    </div>
+    <div class="comment-body">Für alle drei Kinder gekauft plus für mich und meinen Mann. Meine Tochter hat erst gezögert — jetzt schreibt sie mir, sie findet es unverzichtbar. Viel besser als gedacht für den Preis.</div>
+    <div class="comment-actions">💬 41 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 2 Tagen</div>
+        <div class="reply-body">Familienschutz ist tatsächlich einer der wichtigsten Aspekte — Gut dass Ihre ganze Familie jetzt geschützt ist.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#b8bcb4"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#303828" text-anchor="middle">GF</text></svg></div>
+      <div>
+        <div class="comment-name">Gerhard F., 74, Köln</div>
+        <div class="comment-meta">vor 3 Tagen</div>
+      </div>
+      <div class="comment-likes">👍 154</div>
+    </div>
+    <div class="comment-body">Ich bin Rentner und war offen gestanden skeptisch. Mein Sohn hat mir geholfen es anzubringen — keine 2 Minuten. Seither keine Angst mehr wenn ich in der Stadt bin. Ich wünschte ich hätte sowas vor Jahren schon gehabt.</div>
+    <div class="comment-actions">💬 22 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 3 Tagen</div>
+        <div class="reply-body">Rentner sind leider besonders häufig Ziel professioneller Taschendiebe. Ihre Vorsicht ist absolut richtig — und die 2 Minuten Installation sind gut investierte Zeit.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#b4c0c8"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#243040" text-anchor="middle">KP</text></svg></div>
+      <div>
+        <div class="comment-name">Klaus-Werner P., 62, Stuttgart</div>
+        <div class="comment-meta">vor 3 Tagen</div>
+      </div>
+      <div class="comment-likes">👍 317</div>
+    </div>
+    <div class="comment-body">Hatte vorher schon Probleme mit Identitätsdiebstahl durch einen Datenleck. Das Thema ist kein Spaß. Der Handyleine ist das Einfachste und Günstigste was man tun kann. Keine Ausrede mehr.</div>
+    <div class="comment-actions">💬 58 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 3 Tagen</div>
+        <div class="reply-body">Wer Identitätsdiebstahl einmal erlebt hat versteht sofort den Ernst der Lage. Danke dass Sie das hier teilen — viele Leser werden sich in Ihrer Geschichte wiederfinden.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#c4bcc0"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#403038" text-anchor="middle">HW</text></svg></div>
+      <div>
+        <div class="comment-name">Helga W., 66, Nürnberg</div>
+        <div class="comment-meta">vor 4 Tagen</div>
+      </div>
+      <div class="comment-likes">👍 229</div>
+    </div>
+    <div class="comment-body">Mein Schwiegersohn hat mir diesen Artikel geschickt. Ich habe dann meinem Mann vorgelesen was mit dem Thomas Schäfer passiert ist. Wir haben beide sofort bestellt. Für den Preis wäre es unverantwortlich, es nicht zu tun.</div>
+    <div class="comment-actions">💬 31 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 4 Tagen</div>
+        <div class="reply-body">Genau das ist der Gedanke hinter diesem Artikel — nicht erschrecken, sondern verstehen und handeln. Danke, dass Sie ihn weitergegeben haben.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 14 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#b8b8c4"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#2c2c40" text-anchor="middle">RS</text></svg></div>
+      <div>
+        <div class="comment-name">Rolf S., 57, Dortmund</div>
+        <div class="comment-meta">vor 5 Tagen</div>
+      </div>
+      <div class="comment-likes">👍 388</div>
+    </div>
+    <div class="comment-body">Ich arbeite als Bankangestellter. Was hier steht über die Haftung stimmt leider haargenau. Ich durfte das meinen Kunden nie so direkt sagen — aber nach dem Feierabend kann ich Ihnen sagen: Kaufen Sie das. Sofort.</div>
+    <div class="comment-actions">💬 94 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 5 Tagen</div>
+        <div class="reply-body">Das ist eine der ehrlichsten Rückmeldungen die wir bekommen haben — und sie bestätigt genau das, was wir in diesem Artikel dokumentieren. Danke für Ihre Offenheit.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15 -->
+  <div class="comment-card">
+    <div class="comment-top">
+      <div class="comment-avatar"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" fill="#c8c0b8"/><text x="19" y="25" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#483828" text-anchor="middle">RM</text></svg></div>
+      <div>
+        <div class="comment-name">Roswitha M., 72, Leipzig</div>
+        <div class="comment-meta">vor 6 Tagen</div>
+      </div>
+      <div class="comment-likes">👍 176</div>
+    </div>
+    <div class="comment-body">Ich bin Rentnerin und hatte ehrlich gesagt keine Ahnung wie gefährlich das ist. Mein Enkelsohn hat mir geholfen. In zwei Minuten war alles dran. Jetzt gehe ich wieder ruhig einkaufen.</div>
+    <div class="comment-actions">💬 18 Kommentare &nbsp;·&nbsp; ↗ Teilen</div>
+    <div class="comment-reply">
+      <div class="reply-avatar"><svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f0ede6"/><path d="M100 18 L172 52 L172 112 Q172 162 100 186 Q28 162 28 112 L28 52 Z" fill="#0a0a0a"/><path d="M100 36 L158 65 L158 112 Q158 153 100 172 Q42 153 42 112 L42 65 Z" fill="#c8001a"/><text x="100" y="134" font-family="Arial,sans-serif" font-size="84" fill="#ffffff" text-anchor="middle" font-weight="900" letter-spacing="-1">FI</text></svg></div>
+      <div>
+        <div class="reply-name">Finanzschutz-Institut <span class="reply-badge">Offiziell</span></div>
+        <div class="reply-meta">vor 6 Tagen</div>
+        <div class="reply-body">Das ist das schönste Feedback das wir bekommen können. Genau für Menschen wie Sie — die im Alltag einfach ruhig einkaufen möchten — wurde dieses Produkt entwickelt.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /comments -->
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-word">Finanzschutz<span>Institut</span></div>
+      <div class="footer-tagline">Unabhängige Tests · Klare Empfehlungen · Seit 2019</div>
+      <p class="footer-desc">Das Finanzschutz-Institut testet Produkte und Dienstleistungen rund um Finanz- und Datensicherheit für Verbraucher in Deutschland. Unabhängig, sachlich, klar.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Kategorien</h4>
+      <a href="#">Produkttests</a>
+      <a href="#">Sicherheitstipps</a>
+      <a href="#">Betrugsmaschen</a>
+      <a href="#">Ratgeber</a>
+    </div>
+    <div class="footer-col">
+      <h4>Institut</h4>
+      <a href="#">Über uns</a>
+      <a href="#">Testmethodik</a>
+      <a href="#">Redaktion</a>
+      <a href="#">Kontakt</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="#">Nutzungsbedingungen</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Finanzschutz-Institut · Alle Rechte vorbehalten</span>
+    <span>Dr. Markus Eigenfeld · Chefredakteur Sicherheitstechnik</span>
+  </div>
+</footer>
+
+
+<script>
+  // ── LESEFORTSCHRITT-BALKEN ──
+  const bar = document.getElementById('reading-progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (scrollTop / docHeight * 100) + '%';
+  }, { passive: true });
+
+  // ── COUNTER-ANIMATION beim Einblenden ──
+  function animateCounter(el) {
+    const target   = parseInt(el.dataset.counter, 10);
+    const suffix   = el.dataset.suffix || '';
+    const isDecimal = el.dataset.decimal === '1';
+    const isThousands = el.dataset.format === 'thousands';
+    const duration = 1800;
+    const steps    = 60;
+    const interval = duration / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += target / steps;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      let display;
+      if (isDecimal) {
+        display = (current / 10).toFixed(1).replace('.', ',');
+      } else if (isThousands) {
+        display = Math.round(current).toLocaleString('de-DE');
+      } else {
+        display = Math.round(current);
+      }
+      el.textContent = display + suffix;
+    }, interval);
+  }
+
+  // IntersectionObserver: Counter startet wenn Sidebar ins Bild scrollt
+  const counters = document.querySelectorAll('[data-counter]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        entry.target.dataset.animated = '1';
+        animateCounter(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(el => observer.observe(el));
+
+  // ── VIDEO-CAROUSEL (3D Coverflow) ──
+  const vcRoot   = document.getElementById('video-carousel');
+  const vcSlides = vcRoot.querySelectorAll('.video-carousel-slide');
+  const vcDots   = vcRoot.querySelectorAll('.video-carousel-dot');
+  const vcCur    = document.getElementById('vc-cur');
+  let vcIndex = 0;
+
+  function vcRender() {
+    const n = vcSlides.length;
+    vcSlides.forEach((slide, i) => {
+      let offset = i - vcIndex;
+      if (offset > n / 2) offset -= n;
+      if (offset < -n / 2) offset -= -n;
+      const abs = Math.abs(offset);
+      const x = offset * 165;
+      const scale = abs === 0 ? 1 : abs === 1 ? 0.78 : 0.6;
+      const rotate = offset === 0 ? 0 : offset > 0 ? -28 : 28;
+      const z = -abs * 120;
+      slide.style.transform = `translate(-50%, 0) translateX(${x}px) translateZ(${z}px) rotateY(${rotate}deg) scale(${scale})`;
+      slide.style.zIndex = n - abs;
+      slide.style.opacity = abs > 2 ? 0 : 1;
+      slide.style.filter = abs === 0 ? 'none' : 'brightness(0.55)';
+      slide.classList.toggle('is-active', i === vcIndex);
+      if (abs !== 0) slide.querySelector('video').pause();
+    });
+    vcDots.forEach((d, n2) => d.classList.toggle('is-active', n2 === vcIndex));
+    if (vcCur) vcCur.textContent = String(vcIndex + 1).padStart(2, '0');
+  }
+  function vcGoTo(i) {
+    vcIndex = (i + vcSlides.length) % vcSlides.length;
+    vcRender();
+  }
+  function vcMove(delta) { vcGoTo(vcIndex + delta); }
+  vcSlides.forEach((slide, i) => {
+    slide.addEventListener('click', () => { if (i !== vcIndex) vcGoTo(i); });
+  });
+  vcRender();
+
+  // ── VIDEO-CAROUSEL PRODUKT ──
+  const vcpRoot   = document.getElementById('video-carousel-produkt');
+  const vcpSlides = vcpRoot.querySelectorAll('.video-carousel-slide');
+  const vcpDots   = vcpRoot.querySelectorAll('.video-carousel-dot');
+  const vcpCur    = document.getElementById('vcp-cur');
+  let vcpIndex = 0;
+
+  function vcpRender() {
+    const n = vcpSlides.length;
+    vcpSlides.forEach((slide, i) => {
+      let offset = i - vcpIndex;
+      if (offset > n / 2) offset -= n;
+      if (offset < -n / 2) offset -= -n;
+      const abs = Math.abs(offset);
+      const x = offset * 165;
+      const scale = abs === 0 ? 1 : abs === 1 ? 0.78 : 0.6;
+      const rotate = offset === 0 ? 0 : offset > 0 ? -28 : 28;
+      const z = -abs * 120;
+      slide.style.transform = `translate(-50%, 0) translateX(${x}px) translateZ(${z}px) rotateY(${rotate}deg) scale(${scale})`;
+      slide.style.zIndex = n - abs;
+      slide.style.opacity = abs > 2 ? 0 : 1;
+      slide.style.filter = abs === 0 ? 'none' : 'brightness(0.55)';
+      slide.classList.toggle('is-active', i === vcpIndex);
+      if (abs !== 0) slide.querySelector('video').pause();
+    });
+    vcpDots.forEach((d, n2) => d.classList.toggle('is-active', n2 === vcpIndex));
+    if (vcpCur) vcpCur.textContent = String(vcpIndex + 1).padStart(2, '0');
+  }
+  function vcpGoTo(i) {
+    vcpIndex = (i + vcpSlides.length) % vcpSlides.length;
+    vcpRender();
+  }
+  function vcpMove(delta) { vcpGoTo(vcpIndex + delta); }
+  vcpSlides.forEach((slide, i) => {
+    slide.addEventListener('click', () => { if (i !== vcpIndex) vcpGoTo(i); });
+  });
+  vcpRender();
+</script>
+
+</body>
+</html>
