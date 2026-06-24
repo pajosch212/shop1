@@ -1449,7 +1449,7 @@ button { font-family: var(--body); cursor: pointer; }
   .seals { grid-template-columns: 1fr 1fr; }
   .rev-overview { grid-template-columns: 1fr; gap: 24px; }
   .founder-inner { grid-template-columns: 1fr; }
-  .founder-img { aspect-ratio: unset; height: 160px; }
+  .founder-img { aspect-ratio: 3/4; height: auto; max-width: 320px; }
 }
 @media (max-width: 768px) {
   .nav-tel { display: none !important; }
@@ -1468,10 +1468,10 @@ button { font-family: var(--body); cursor: pointer; }
   .cmp-table td, .cmp-table th { padding: 10px 12px; font-size: 12px; }
   .sticky-bar { display: flex; }
   body { padding-bottom: 70px; }
-  /* Founder foto mobile */
+  /* Founder foto mobile — Foto komplett zeigen, nicht beschneiden */
   .founder-inner { grid-template-columns: 1fr; gap: 24px; }
-  .founder-img { aspect-ratio: 4/3; height: auto; max-height: 260px; }
-  .founder-img img { object-position: center top; }
+  .founder-img { aspect-ratio: auto; height: auto; max-height: none; display: block; }
+  .founder-img img { position: static !important; width: 100%; height: auto !important; object-fit: contain; }
   /* LP-Scores mobile */
   .lp-score-row { grid-template-columns: 100px 1fr 44px; gap: 8px; }
 }
@@ -1479,7 +1479,7 @@ button { font-family: var(--body); cursor: pointer; }
   .seals { grid-template-columns: 1fr 1fr; }
   .guar-pills { flex-direction: column; align-items: center; }
   .nav-logo-main { font-size: 13px; letter-spacing: .02em; }
-  .founder-img { max-height: 200px; }
+  .founder-img { max-height: none; }
   .lp-score-row { grid-template-columns: 80px 1fr 38px; gap: 6px; }
   .lp-score-name { font-size: 9px; }
   .lp-score-num { font-size: 20px; }
@@ -2073,7 +2073,7 @@ button { font-family: var(--body); cursor: pointer; }
     </div>
     <div class="founder-inner">
       <div class="founder-img" style="background:none;overflow:hidden;padding:0;position:relative">
-        <img src="https://cdn.shopify.com/s/files/1/1068/1411/2069/files/founder-schaefer.jpg?v=1782183698" alt="Thomas Schäfer" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block">
+        <img src="https://cdn.shopify.com/s/files/1/1068/1411/2069/files/founder-schaefer.jpg?v=1782183698" alt="Thomas Schäfer" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
         <div class="founder-img-label">
           <span>Gründer</span>
           <strong>Thomas Schäfer</strong>
