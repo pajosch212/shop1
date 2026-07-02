@@ -190,25 +190,16 @@ button { font-family: var(--body); cursor: pointer; }
 }
 .nav-logo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  height: 100%;
   line-height: 1;
+  text-decoration: none;
 }
-.nav-logo-main {
-  font-family: var(--cond);
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.nav-logo-main span { color: var(--warn-d); }
-.nav-logo-sub {
-  font-family: var(--mono);
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--ink-lt);
+.nav-logo-img {
+  height: 52px;          /* füllt die 64px-Leiste, minimale Luft oben/unten */
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 .nav-tel {
   font-family: var(--mono);
@@ -580,6 +571,45 @@ button { font-family: var(--body); cursor: pointer; }
 .guarantee-box .g-txt { font-family: var(--mono); font-size: 11px; line-height: 1.5; color: var(--ink); }
 .guarantee-box .g-txt strong { font-family: var(--cond); font-size: 13px; letter-spacing: .03em; }
 .ship-free { font-family: var(--mono); font-size: 10px; color: var(--green); font-weight: 700; margin-top: 4px; }
+/* Social Proof — Live-Zeile am Angebot */
+.social-live {
+  display: flex; align-items: center; gap: 7px;
+  font-family: var(--mono); font-size: 10.5px; color: var(--ink-lt);
+  letter-spacing: .02em; margin-bottom: 10px;
+}
+.social-live .social-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--green);
+  flex-shrink: 0; box-shadow: 0 0 0 0 rgba(34,139,84,.5);
+  animation: sp-pulse 1.8s infinite;
+}
+.social-live span#socialCount, .social-live span#socialViewing { color: var(--green); font-weight: 700; }
+@keyframes sp-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(34,139,84,.5); }
+  70% { box-shadow: 0 0 0 6px rgba(34,139,84,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,139,84,0); }
+}
+/* Social Proof — Live-Toast unten links */
+.sp-toast {
+  position: fixed; left: 18px; bottom: 18px; z-index: 300;
+  display: flex; align-items: center; gap: 12px;
+  background: var(--white); border: 1.5px solid var(--border);
+  border-left: 4px solid var(--green);
+  border-radius: var(--r); padding: 11px 14px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.14);
+  max-width: 300px;
+  transform: translateY(140%); opacity: 0;
+  transition: transform .45s cubic-bezier(.22,1,.36,1), opacity .45s;
+  pointer-events: none;
+}
+.sp-toast.show { transform: translateY(0); opacity: 1; }
+.sp-toast-ico { font-size: 20px; flex-shrink: 0; }
+.sp-toast-body { flex: 1; min-width: 0; }
+.sp-toast-main { font-family: var(--cond); font-size: 14px; font-weight: 700; color: var(--ink); letter-spacing: .02em; }
+.sp-toast-sub { font-family: var(--mono); font-size: 10px; color: var(--ink-lt); margin-top: 1px; }
+.sp-toast-check { color: var(--green); font-weight: 700; font-size: 16px; flex-shrink: 0; }
+@media (max-width: 768px) {
+  .sp-toast { left: 10px; right: 10px; bottom: 76px; max-width: none; }
+}
 
 /* CTA */
 .cta-btn {
@@ -1538,8 +1568,7 @@ button { font-family: var(--body); cursor: pointer; }
   .nav-tel { display: none !important; }
   .nav-btn { display: none; }
   .nav-inner { height: 48px; padding: 0; flex-wrap: nowrap; gap: 0; }
-  .nav-logo-main { font-size: 16px; }
-  .nav-logo-sub { display: none; }
+  .nav-logo-img { height: 30px; max-width: 78vw; }
   .cta-btn { font-size: 15px; padding: 14px 12px; letter-spacing: .04em; }
   .bundle-opt { gap: 8px; padding: 12px 10px; }
   .bundle-price { min-width: 60px; flex-shrink: 0; }
@@ -1561,7 +1590,7 @@ button { font-family: var(--body); cursor: pointer; }
 @media (max-width: 480px) {
   .seals { grid-template-columns: 1fr 1fr; }
   .guar-pills { flex-direction: column; align-items: center; }
-  .nav-logo-main { font-size: 13px; letter-spacing: .02em; }
+  .nav-logo-img { height: 26px; }
   .founder-img { max-height: none; }
   .lp-score-row { grid-template-columns: 80px 1fr 38px; gap: 6px; }
   .lp-score-name { font-size: 9px; }
@@ -1606,10 +1635,9 @@ button { font-family: var(--body); cursor: pointer; }
 <nav class="nav">
   <div class="wrap">
     <div class="nav-inner">
-      <div class="nav-logo">
-        <div class="nav-logo-main">SCHÄFER<span>.</span>SICHERHEITSTECHNIK</div>
-        <div class="nav-logo-sub">Hamburg · Gegr. 2023 · Reg. DE 449 201 879 — Schäfer Sicherheitstechnik</div>
-      </div>
+      <a href="/" class="nav-logo" aria-label="Schäfer Sicherheitstechnik">
+        <img src="logo-schaefer.png" alt="Schäfer Sicherheitstechnik" class="nav-logo-img">
+      </a>
       <div class="nav-tel" style="align-items:center;gap:6px">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--ink-lt)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.06 6.06l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z"/></svg>
         <strong>01556 0111372</strong> &nbsp;<span style="opacity:.5">Mo–Sa 8–22 Uhr</span>
@@ -1711,6 +1739,7 @@ button { font-family: var(--body); cursor: pointer; }
 
         <!-- Bundle -->
         <div id="bundle">
+          <div class="social-live"><span class="social-dot"></span><span id="socialCount">37</span> Personen haben heute bestellt · <span id="socialViewing">12</span> sehen sich das Angebot gerade an</div>
           <div class="bundle-label">// Menge wählen</div>
 
           <div class="bundle-opt" data-variant="58194976276805" onclick="pick(this)">
@@ -2510,6 +2539,16 @@ button { font-family: var(--body); cursor: pointer; }
   <button class="sticky-btn" onclick="scrollToBundle()">🔒 Jetzt schützen</button>
 </div>
 
+<!-- Social-Proof Live-Toast -->
+<div class="sp-toast" id="spToast">
+  <div class="sp-toast-ico">🔒</div>
+  <div class="sp-toast-body">
+    <div class="sp-toast-main" id="spToastMain">Anna aus Hamburg</div>
+    <div class="sp-toast-sub" id="spToastSub">hat den Familienschutz gekauft · vor 3 Min.</div>
+  </div>
+  <div class="sp-toast-check">✓</div>
+</div>
+
 <script>
 (function(){
   function switchMain(thumb, src) {
@@ -2592,6 +2631,44 @@ button { font-family: var(--body); cursor: pointer; }
     if (el) { el.style.display = 'block'; }
     if (btn) { btn.style.display = 'none'; }
   }
+
+  // ── Social-Proof-Dynamik ──
+  (function(){
+    var toast = document.getElementById('spToast');
+    if(!toast) return;
+    var mainEl = document.getElementById('spToastMain');
+    var subEl  = document.getElementById('spToastSub');
+    var names = ['Anna aus Hamburg','Klaus aus München','Ursula aus Köln','Peter aus Berlin',
+      'Ingrid aus Stuttgart','Hans aus Dortmund','Gisela aus Bremen','Werner aus Leipzig',
+      'Renate aus Dresden','Manfred aus Essen','Helga aus Nürnberg','Dieter aus Hannover',
+      'Christa aus Frankfurt','Günther aus Duisburg','Monika aus Bochum','Jürgen aus Wuppertal',
+      'Brigitte aus Kiel','Wolfgang aus Augsburg','Erika aus Mainz','Rolf aus Kassel'];
+    var bundles = ['den Familienschutz','den Rundum-Schutz','den Eigenschutz','das Familienpaket (2+1)'];
+    var i = 0;
+    function shuffle(a){ for(var j=a.length-1;j>0;j--){ var k=Math.floor(Math.random()*(j+1)); var t=a[j];a[j]=a[k];a[k]=t; } return a; }
+    shuffle(names);
+    function nextToast(){
+      var name = names[i % names.length];
+      var bundle = bundles[Math.floor(Math.random()*bundles.length)];
+      var mins = Math.floor(Math.random()*17)+1;
+      mainEl.textContent = name;
+      subEl.textContent = 'hat ' + bundle + ' gekauft · vor ' + mins + ' Min.';
+      toast.classList.add('show');
+      setTimeout(function(){ toast.classList.remove('show'); }, 4500);
+      i++;
+    }
+    // erster Toast nach kurzer Verzögerung, dann in Intervallen
+    setTimeout(nextToast, 4000);
+    setInterval(nextToast, 11000);
+
+    // Live-Zähler leicht schwanken lassen (wirkt lebendig, bleibt in glaubwürdiger Spanne)
+    var cntEl = document.getElementById('socialCount');
+    var viewEl = document.getElementById('socialViewing');
+    setInterval(function(){
+      if(cntEl){ var c = parseInt(cntEl.textContent,10)||37; if(Math.random()<0.5){ cntEl.textContent = c+1; } }
+      if(viewEl){ viewEl.textContent = Math.floor(Math.random()*9)+8; } // 8–16
+    }, 9000);
+  })();
 
   // Reviews date — current month/year
   (function(){
