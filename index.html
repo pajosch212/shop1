@@ -545,6 +545,41 @@ button { font-family: var(--body); cursor: pointer; }
 .bundle-p-main { font-family: var(--cond); font-size: 20px; font-weight: 700; }
 .bundle-p-old { font-family: var(--mono); font-size: 10px; color: var(--ink-xlt); text-decoration: line-through; display: block; }
 .bundle-save { font-family: var(--mono); font-size: 10px; color: var(--green); font-weight: 500; }
+/* Stückpreis + Bundle-Hervorhebung + Value-Stack + Garantie */
+.bundle-per { font-family: var(--mono); font-size: 10px; color: var(--steel); font-weight: 700; margin-top: 2px; }
+.bundle-per s { color: var(--ink-xlt); font-weight: 400; }
+.bundle-opt.family-hero { transform: scale(1.02); }
+.bundle-opt.active.family-hero {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(34,139,84,.14), 0 6px 20px rgba(0,0,0,.08);
+}
+.bundle-opt.active.family-hero .bundle-badge-pop { background: var(--green); }
+.value-stack {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px 16px;
+  margin: 4px 0 14px;
+}
+.value-stack-title { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-lt); margin-bottom: 8px; }
+.value-row { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 12px; color: var(--ink); padding: 3px 0; }
+.value-row .v-val { color: var(--ink-xlt); }
+.value-row .v-free { color: var(--green); font-weight: 700; }
+.value-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border-h); }
+.value-total .vt-label { font-family: var(--cond); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.value-total .vt-price { font-family: var(--cond); font-size: 24px; font-weight: 700; color: var(--green); }
+.guarantee-box {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(34,139,84,.06);
+  border: 1.5px solid rgba(34,139,84,.25);
+  border-radius: var(--r);
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+.guarantee-box .g-ico { font-size: 20px; flex-shrink: 0; }
+.guarantee-box .g-txt { font-family: var(--mono); font-size: 11px; line-height: 1.5; color: var(--ink); }
+.guarantee-box .g-txt strong { font-family: var(--cond); font-size: 13px; letter-spacing: .03em; }
+.ship-free { font-family: var(--mono); font-size: 10px; color: var(--green); font-weight: 700; margin-top: 4px; }
 
 /* CTA */
 .cta-btn {
@@ -1686,6 +1721,7 @@ button { font-family: var(--body); cursor: pointer; }
             </div>
             <div class="bundle-price">
               <div class="bundle-p-main">13,80 €</div>
+              <div class="bundle-per">13,80 € / Stück</div>
             </div>
           </div>
 
@@ -1700,6 +1736,7 @@ button { font-family: var(--body); cursor: pointer; }
               <span class="bundle-p-old">41,40 €</span>
               <div class="bundle-p-main">27,60 €</div>
               <div class="bundle-save">1 GRATIS · spare 13,80 €</div>
+              <div class="bundle-per"><s>13,80 €</s> 9,20 € / Stück</div>
             </div>
           </div>
 
@@ -1713,11 +1750,29 @@ button { font-family: var(--body); cursor: pointer; }
               <span class="bundle-p-old">69,00 €</span>
               <div class="bundle-p-main">41,40 €</div>
               <div class="bundle-save">2 GRATIS · spare 27,60 €</div>
+              <div class="bundle-per"><s>13,80 €</s> 8,28 € / Stück</div>
             </div>
           </div>
         </div>
 
-        <button class="cta-btn" onclick="addToCart(this)" style="margin-top:18px">
+        <!-- Value-Stack (aktualisiert per JS je nach Bundle) -->
+        <div class="value-stack" id="valueStack">
+          <div class="value-stack-title">// Das erhalten Sie</div>
+          <div id="valueRows"></div>
+          <div class="value-total">
+            <span class="vt-label">Sie zahlen nur</span>
+            <span class="vt-price" id="valueTotal">27,60 €</span>
+          </div>
+          <div class="ship-free" id="shipFree">🚚 GRATIS Versand inklusive</div>
+        </div>
+
+        <!-- Garantie -->
+        <div class="guarantee-box">
+          <span class="g-ico">🛡️</span>
+          <span class="g-txt"><strong>90 Tage Geld-zurück-Garantie.</strong><br>Ohne Wenn und Aber. Gefällt es nicht, erhalten Sie Ihr Geld zurück — kein Risiko für Sie.</span>
+        </div>
+
+        <button class="cta-btn" onclick="addToCart(this)">
           🔒 Jetzt Handy schützen
         </button>
 
@@ -2476,10 +2531,36 @@ button { font-family: var(--body); cursor: pointer; }
   }
   window.galleryNav = galleryNav;
 
+  // Value-Stack-Daten je Variante
+  var BUNDLES = {
+    '58194976276805': { rows:[['1× Handyleine','13,80 €']], free:0, total:'13,80 €', ship:false },
+    '58194976309573': { rows:[['2× Handyleine','27,60 €'],['1× Handyleine GRATIS','free']], free:1, total:'27,60 €', ship:true },
+    '58194976342341': { rows:[['3× Handyleine','41,40 €'],['2× Handyleine GRATIS','free']], free:2, total:'41,40 €', ship:true }
+  };
+  function renderStack(variant){
+    var b = BUNDLES[variant] || BUNDLES['58194976309573'];
+    var rowsEl = document.getElementById('valueRows');
+    if(rowsEl){
+      rowsEl.innerHTML = b.rows.map(function(r){
+        var val = r[1]==='free' ? '<span class="v-free">GRATIS</span>' : '<span class="v-val">'+r[1]+'</span>';
+        return '<div class="value-row"><span>'+r[0]+'</span>'+val+'</div>';
+      }).join('') + '<div class="value-row"><span>90 Tage Geld-zurück-Garantie</span><span class="v-free">inkl.</span></div>'
+        + (b.ship ? '<div class="value-row"><span>Versand</span><span class="v-free">GRATIS</span></div>' : '');
+    }
+    var t = document.getElementById('valueTotal'); if(t) t.textContent = b.total;
+    var s = document.getElementById('shipFree');
+    if(s) s.style.display = b.ship ? 'block' : 'none';
+  }
   function pick(el){
     document.querySelectorAll('.bundle-opt').forEach(function(o){ o.classList.remove('active'); });
     el.classList.add('active');
+    renderStack(el.getAttribute('data-variant'));
   }
+  // Init beim Laden (Familienschutz ist vorausgewählt)
+  document.addEventListener('DOMContentLoaded', function(){
+    var a = document.querySelector('.bundle-opt.active');
+    if(a) renderStack(a.getAttribute('data-variant'));
+  });
   function getVariantId(){
     var a = document.querySelector('.bundle-opt.active');
     return a ? (a.getAttribute('data-variant') || '58194976309573') : '58194976309573';
