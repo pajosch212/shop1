@@ -1739,7 +1739,6 @@ button { font-family: var(--body); cursor: pointer; }
 
         <!-- Bundle -->
         <div id="bundle">
-          <div class="social-live"><span class="social-dot"></span><span id="socialCount">37</span> Personen haben heute bestellt · <span id="socialViewing">12</span> sehen sich das Angebot gerade an</div>
           <div class="bundle-label">// Menge wählen</div>
 
           <div class="bundle-opt" data-variant="58194976276805" onclick="pick(this)">
@@ -2520,10 +2519,10 @@ button { font-family: var(--body); cursor: pointer; }
     <div class="footer-inner">
       <div class="footer-links">
         <a href="https://kahmth-8i.myshopify.com/pages/impressum">Impressum</a>
-        <a href="https://bezahlung.schäfer-sicherheitstechnik.de/policies/privacy-policy">Datenschutz</a>
-        <a href="https://bezahlung.schäfer-sicherheitstechnik.de/policies/terms-of-service">AGB</a>
-        <a href="https://bezahlung.schäfer-sicherheitstechnik.de/policies/refund-policy">Widerrufsrecht</a>
-        <a href="https://bezahlung.schäfer-sicherheitstechnik.de/policies/shipping-policy">Versand</a>
+        <a href="https://bezahlung.schaefer-sicherheitstechnik.de/policies/privacy-policy">Datenschutz</a>
+        <a href="https://bezahlung.schaefer-sicherheitstechnik.de/policies/terms-of-service">AGB</a>
+        <a href="https://bezahlung.schaefer-sicherheitstechnik.de/policies/refund-policy">Widerrufsrecht</a>
+        <a href="https://bezahlung.schaefer-sicherheitstechnik.de/policies/shipping-policy">Versand</a>
       </div>
       <div class="footer-copy">© 2026 Schäfer Sicherheitstechnik · Hamburg · DOK-SYS: SC-SHOP-001</div>
     </div>
@@ -2539,15 +2538,6 @@ button { font-family: var(--body); cursor: pointer; }
   <button class="sticky-btn" onclick="scrollToBundle()">🔒 Jetzt schützen</button>
 </div>
 
-<!-- Social-Proof Live-Toast -->
-<div class="sp-toast" id="spToast">
-  <div class="sp-toast-ico">🔒</div>
-  <div class="sp-toast-body">
-    <div class="sp-toast-main" id="spToastMain">Anna aus Hamburg</div>
-    <div class="sp-toast-sub" id="spToastSub">hat den Familienschutz gekauft · vor 3 Min.</div>
-  </div>
-  <div class="sp-toast-check">✓</div>
-</div>
 
 <script>
 (function(){
@@ -2605,7 +2595,7 @@ button { font-family: var(--body); cursor: pointer; }
     return a ? (a.getAttribute('data-variant') || '58194976309573') : '58194976309573';
   }
   function addToCart(btn){
-    window.location.href = 'https://bezahlung.sch%C3%A4fer-sicherheitstechnik.de/cart/' + getVariantId() + ':1';
+    window.location.href = 'https://bezahlung.schaefer-sicherheitstechnik.de/cart/' + getVariantId() + ':1';
   }
   function scrollToBundle(){
     var el = document.getElementById('bundle');
@@ -2632,43 +2622,6 @@ button { font-family: var(--body); cursor: pointer; }
     if (btn) { btn.style.display = 'none'; }
   }
 
-  // ── Social-Proof-Dynamik ──
-  (function(){
-    var toast = document.getElementById('spToast');
-    if(!toast) return;
-    var mainEl = document.getElementById('spToastMain');
-    var subEl  = document.getElementById('spToastSub');
-    var names = ['Anna aus Hamburg','Klaus aus München','Ursula aus Köln','Peter aus Berlin',
-      'Ingrid aus Stuttgart','Hans aus Dortmund','Gisela aus Bremen','Werner aus Leipzig',
-      'Renate aus Dresden','Manfred aus Essen','Helga aus Nürnberg','Dieter aus Hannover',
-      'Christa aus Frankfurt','Günther aus Duisburg','Monika aus Bochum','Jürgen aus Wuppertal',
-      'Brigitte aus Kiel','Wolfgang aus Augsburg','Erika aus Mainz','Rolf aus Kassel'];
-    var bundles = ['den Familienschutz','den Rundum-Schutz','den Eigenschutz','das Familienpaket (2+1)'];
-    var i = 0;
-    function shuffle(a){ for(var j=a.length-1;j>0;j--){ var k=Math.floor(Math.random()*(j+1)); var t=a[j];a[j]=a[k];a[k]=t; } return a; }
-    shuffle(names);
-    function nextToast(){
-      var name = names[i % names.length];
-      var bundle = bundles[Math.floor(Math.random()*bundles.length)];
-      var mins = Math.floor(Math.random()*17)+1;
-      mainEl.textContent = name;
-      subEl.textContent = 'hat ' + bundle + ' gekauft · vor ' + mins + ' Min.';
-      toast.classList.add('show');
-      setTimeout(function(){ toast.classList.remove('show'); }, 4500);
-      i++;
-    }
-    // erster Toast nach kurzer Verzögerung, dann in Intervallen
-    setTimeout(nextToast, 4000);
-    setInterval(nextToast, 11000);
-
-    // Live-Zähler leicht schwanken lassen (wirkt lebendig, bleibt in glaubwürdiger Spanne)
-    var cntEl = document.getElementById('socialCount');
-    var viewEl = document.getElementById('socialViewing');
-    setInterval(function(){
-      if(cntEl){ var c = parseInt(cntEl.textContent,10)||37; if(Math.random()<0.5){ cntEl.textContent = c+1; } }
-      if(viewEl){ viewEl.textContent = Math.floor(Math.random()*9)+8; } // 8–16
-    }, 9000);
-  })();
 
   // Reviews date — current month/year
   (function(){
