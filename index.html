@@ -611,6 +611,40 @@ button { font-family: var(--body); cursor: pointer; }
   .sp-toast { left: 10px; right: 10px; bottom: 76px; max-width: none; }
 }
 
+/* Cost Comparison */
+.cost-cmp { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: stretch; margin-top: 28px; }
+.cost-col { border-radius: var(--r); padding: 20px 22px; border: 1.5px solid var(--border); }
+.cost-col-good { background: rgba(34,139,84,.05); border-color: rgba(34,139,84,.3); }
+.cost-col-bad { background: rgba(196,58,58,.05); border-color: rgba(196,58,58,.28); }
+.cost-col-label { font-family: var(--cond); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 14px; }
+.cost-col-good .cost-col-label { color: var(--green); }
+.cost-col-bad .cost-col-label { color: #B23A3A; }
+.cost-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 8px 0; border-top: 1px dashed var(--border-h); font-family: var(--mono); font-size: 12.5px; color: var(--ink-lt); }
+.cost-row:first-of-type { border-top: none; }
+.cost-row strong { font-family: var(--cond); font-size: 15px; color: var(--ink); text-align: right; }
+.cost-col-good .cost-row strong { color: var(--green); }
+.cost-col-bad .cost-row strong { color: #B23A3A; }
+.cost-vs { align-self: center; font-family: var(--cond); font-size: 13px; font-weight: 700; color: var(--ink-xlt); letter-spacing: .1em; }
+.cost-foot { font-family: var(--mono); font-size: 10.5px; color: var(--ink-xlt); margin-top: 14px; line-height: 1.6; }
+@media (max-width: 640px) {
+  .cost-cmp { grid-template-columns: 1fr; }
+  .cost-vs { justify-self: center; padding: 2px 0; }
+}
+
+/* FAQ */
+.faq-list { max-width: 720px; margin: 28px auto 0; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { border: 1.5px solid var(--border); border-radius: var(--r); background: var(--white); overflow: hidden; }
+.faq-q {
+  width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  background: none; border: none; cursor: pointer; text-align: left;
+  padding: 15px 18px; font-family: var(--cond); font-size: 15px; font-weight: 700; color: var(--ink);
+}
+.faq-arrow { font-size: 20px; color: var(--steel); transition: transform .2s; flex-shrink: 0; }
+.faq-item.open .faq-arrow { transform: rotate(90deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
+.faq-item.open .faq-a { max-height: 240px; }
+.faq-a p { padding: 0 18px 16px; font-family: var(--mono); font-size: 12.5px; line-height: 1.7; color: var(--ink-lt); }
+
 /* CTA */
 .cta-btn {
   display: flex;
@@ -1831,8 +1865,66 @@ button { font-family: var(--body); cursor: pointer; }
   </div>
 </section>
 
-<!-- PRESS -->
+<!-- COST COMPARISON -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="s-label">// Der Vergleich</div>
+      <h2 class="s-h2">Was kostet Sie ein gestohlenes Handy wirklich?</h2>
+    </div>
+    <div class="cost-cmp">
+      <div class="cost-col cost-col-good">
+        <div class="cost-col-label">Mit Handyleine</div>
+        <div class="cost-row"><span>Kosten</span><strong>13,80 €</strong></div>
+        <div class="cost-row"><span>Zeitaufwand</span><strong>11 Sekunden</strong></div>
+        <div class="cost-row"><span>Risiko bei Diebstahl</span><strong>Handy bleibt bei Ihnen</strong></div>
+      </div>
+      <div class="cost-vs">VS</div>
+      <div class="cost-col cost-col-bad">
+        <div class="cost-col-label">Ohne Schutz — im Ernstfall</div>
+        <div class="cost-row"><span>Ø Schaden bei Kontozugriff*</span><strong>mehrere Tausend €</strong></div>
+        <div class="cost-row"><span>Zeitaufwand danach</span><strong>Wochen bis Monate</strong></div>
+        <div class="cost-row"><span>Aufwand</span><strong>Bank, Polizei, Anwalt, Anzeigen</strong></div>
+      </div>
+    </div>
+    <div class="cost-foot">*Sperrung, Neubeantragung, Rechtsstreit um Rückbuchungen, verlorene Zeit bei Bank, Polizei und Behörden. Individuelle Schäden können höher ausfallen.</div>
+  </div>
+</section>
+
+<!-- FAQ -->
 <section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="s-label">// Häufige Fragen</div>
+      <h2 class="s-h2">Bevor Sie bestellen</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Blockiert die Handyleine den Ladeanschluss?<span class="faq-arrow">›</span></button>
+        <div class="faq-a"><p>Nein. Das T-Stück sitzt zwischen Handy und Hülle — nicht im Ladeanschluss. Das Ladekabel kann jederzeit ganz normal eingesteckt werden, ohne den Clip zu entfernen.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Passt die Handyleine an jede Handyhülle?<span class="faq-arrow">›</span></button>
+        <div class="faq-a"><p>Sie funktioniert mit jeder Hülle, die eine Ladeöffnung besitzt — das trifft auf die allermeisten handelsüblichen Hüllen zu. Der T-Clip greift durch diese Öffnung und hält sich selbst.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Was, wenn sie nicht hält, was ich mir erwarte?<span class="faq-arrow">›</span></button>
+        <div class="faq-a"><p>Im kalibrierten Zugtest hielt das Seil 162,9 kg — weit über der Herstellerangabe von 87 kg. Sollten Sie dennoch nicht zufrieden sein, greift unsere 90-Tage-Geld-zurück-Garantie ohne Wenn und Aber.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Wie schnell ist die Handyleine montiert?<span class="faq-arrow">›</span></button>
+        <div class="faq-a"><p>In der Regel unter 11 Sekunden. Kein Kleber, kein Werkzeug — Clip durch die Ladeöffnung, Karabiner einhängen, fertig.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Wie schnell wird geliefert?<span class="faq-arrow">›</span></button>
+        <div class="faq-a"><p>Versand aus Deutschland, in der Regel Zustellung innerhalb von 24 Stunden nach Versand. Ab 25 € versandkostenfrei.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="section">
   <div class="wrap">
     <div class="section-head center">
       <div class="s-label">Auszeichnung &amp; Test</div>
@@ -2601,6 +2693,13 @@ button { font-family: var(--body); cursor: pointer; }
     var el = document.getElementById('bundle');
     if(el) el.scrollIntoView({behavior: 'smooth', block: 'center'});
   }
+
+  function toggleFaq(btn){
+    var item = btn.closest('.faq-item');
+    if(!item) return;
+    item.classList.toggle('open');
+  }
+  window.toggleFaq = toggleFaq;
 
   // Delivery day calculation
   (function(){
