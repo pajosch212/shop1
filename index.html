@@ -631,6 +631,47 @@ button { font-family: var(--body); cursor: pointer; }
   .cost-vs { justify-self: center; padding: 2px 0; }
 }
 
+/* Customer Photo Carousel */
+.cust-carousel-wrap {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+}
+.cust-carousel {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  /* kein scroll-snap standardmäßig — würde das rAF-Autoscroll pro Frame zurückschnappen lassen.
+     Wird per .snap-active nur während manuellem Wischen aktiviert (siehe JS). */
+  padding: 0 40px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  user-select: none;
+}
+.cust-carousel.snap-active { scroll-snap-type: x mandatory; }
+.cust-carousel:active { cursor: grabbing; }
+.cust-carousel::-webkit-scrollbar { display: none; }
+.cust-slide {
+  flex: 0 0 auto;
+  width: 220px;
+  aspect-ratio: 3/4;
+  border-radius: var(--r);
+  overflow: hidden;
+  scroll-snap-align: start;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0,0,0,.06);
+}
+.cust-slide img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+@media (max-width: 640px) {
+  .cust-slide { width: 160px; }
+  .cust-carousel { padding: 0 20px; gap: 10px; }
+  .cust-carousel-wrap { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%); }
+}
+
 /* FAQ */
 .faq-list { max-width: 720px; margin: 28px auto 0; display: flex; flex-direction: column; gap: 10px; }
 .faq-item { border: 1.5px solid var(--border); border-radius: var(--r); background: var(--white); overflow: hidden; }
@@ -1865,6 +1906,26 @@ button { font-family: var(--body); cursor: pointer; }
   </div>
 </section>
 
+<!-- CUSTOMER PHOTO CAROUSEL -->
+<section class="section" style="padding-top:0;padding-bottom:0;">
+  <div class="cust-carousel-wrap">
+    <div class="cust-carousel" id="custCarousel">
+      <div class="cust-slide"><img src="carousel-photos/customer-6.webp" alt="Kunde mit Handyleine" loading="lazy"></div>
+      <div class="cust-slide"><img src="carousel-photos/customer-7.webp" alt="Kunde mit Handyleine" loading="lazy"></div>
+      <div class="cust-slide"><img src="carousel-photos/customer-1.webp" alt="Kunde mit Handyleine" loading="lazy"></div>
+      <div class="cust-slide"><img src="carousel-photos/customer-5.webp" alt="Kunde mit Handyleine" loading="lazy"></div>
+      <div class="cust-slide"><img src="carousel-photos/customer-3.webp" alt="Kunde mit Handyleine" loading="lazy"></div>
+      <div class="cust-slide"><img src="carousel-photos/customer-13.webp" alt="Kunde mit Handyleine" loading="lazy"></div>
+      <div class="cust-slide"><img src="carousel-photos/customer-2.webp" alt="Kunde mit Handyleine" loading="lazy"></div>
+      <div class="cust-slide"><img src="carousel-photos/customer-10.webp" alt="Kunde mit Handyleine" loading="lazy"></div>
+      <div class="cust-slide"><img src="carousel-photos/customer-4.webp" alt="Kunde mit Handyleine" loading="lazy"></div>
+      <div class="cust-slide"><img src="carousel-photos/customer-9.webp" alt="Kunde mit Handyleine" loading="lazy"></div>
+      <div class="cust-slide"><img src="carousel-photos/customer-12.webp" alt="Kunde mit Handyleine" loading="lazy"></div>
+    </div>
+    </div>
+  </div>
+</section>
+
 <!-- COST COMPARISON -->
 <section class="section">
   <div class="wrap">
@@ -2693,6 +2754,63 @@ button { font-family: var(--body); cursor: pointer; }
     item.classList.toggle('open');
   }
   window.toggleFaq = toggleFaq;
+
+  // ── Customer Photo Carousel: auto-scroll, pausiert bei manuellem Wischen/Ziehen ──
+  (function(){
+    var track = document.getElementById('custCarousel');
+    if(!track) return;
+
+    var SPEED = 0.6;           // px pro Frame, dezentes Tempo
+    var RESUME_DELAY = 2500;   // ms Pause nach Interaktion, bevor Auto-Scroll weiterläuft
+    var paused = false;
+    var resumeTimer = null;
+    var rafId = null;
+
+    function pause(){
+      paused = true;
+      track.classList.add('snap-active'); // beim manuellen Wischen darf eingerastet werden
+      if(resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(function(){
+        paused = false;
+        track.classList.remove('snap-active'); // sonst schnappt rAF-Autoscroll pro Frame zurück
+      }, RESUME_DELAY);
+    }
+
+    function step(){
+      if(!paused){
+        // nahtloser Loop: am Ende zurück zum Anfang springen
+        if(track.scrollLeft >= track.scrollWidth - track.clientWidth - 1){
+          track.scrollLeft = 0;
+        } else {
+          track.scrollLeft += SPEED;
+        }
+      }
+      rafId = requestAnimationFrame(step);
+    }
+
+    // Nutzer-Interaktion pausiert den Auto-Scroll (Maus-Drag, Touch, Wheel, natives Scrollen)
+    ['pointerdown','wheel','touchstart'].forEach(function(evt){
+      track.addEventListener(evt, pause, { passive: true });
+    });
+
+    // Maus-Drag zum Wischen auf dem Desktop
+    var isDragging = false, startX = 0, startScroll = 0;
+    track.addEventListener('mousedown', function(e){
+      isDragging = true;
+      startX = e.pageX;
+      startScroll = track.scrollLeft;
+      pause();
+    });
+    window.addEventListener('mousemove', function(e){
+      if(!isDragging) return;
+      track.scrollLeft = startScroll - (e.pageX - startX);
+    });
+    window.addEventListener('mouseup', function(){
+      if(isDragging){ isDragging = false; pause(); }
+    });
+
+    rafId = requestAnimationFrame(step);
+  })();
 
   // Delivery day calculation
   (function(){
