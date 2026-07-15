@@ -497,9 +497,9 @@ button { font-family: var(--body); cursor: pointer; }
 }
 .bundle-opt:hover { border-color: var(--steel); }
 .bundle-opt.active {
-  border-color: var(--steel);
+  border-color: var(--green);
   border-width: 2px;
-  box-shadow: 0 0 0 3px rgba(43,58,74,.1);
+  box-shadow: 0 0 0 3px rgba(34,139,84,.14);
 }
 .bundle-badge-pop {
   position: absolute;
@@ -521,10 +521,10 @@ button { font-family: var(--body); cursor: pointer; }
   display: flex; align-items: center; justify-content: center;
   transition: border-color .12s;
 }
-.bundle-opt.active .bundle-radio { border-color: var(--steel); }
+.bundle-opt.active .bundle-radio { border-color: var(--green); }
 .bundle-dot {
   width: 8px; height: 8px;
-  background: var(--steel);
+  background: var(--green);
   border-radius: 50%;
   display: none;
 }
@@ -539,12 +539,8 @@ button { font-family: var(--body); cursor: pointer; }
 /* Stückpreis + Bundle-Hervorhebung + Value-Stack + Garantie */
 .bundle-per { font-family: var(--mono); font-size: 10px; color: var(--steel); font-weight: 700; margin-top: 2px; }
 .bundle-per s { color: var(--ink-xlt); font-weight: 400; }
-.bundle-opt.family-hero { transform: scale(1.02); }
-.bundle-opt.active.family-hero {
-  border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(34,139,84,.14), 0 6px 20px rgba(0,0,0,.08);
-}
-.bundle-opt.active.family-hero .bundle-badge-pop { background: var(--green); }
+.bundle-opt.active { box-shadow: 0 0 0 3px rgba(34,139,84,.14), 0 6px 20px rgba(0,0,0,.08); }
+.bundle-opt.active .bundle-badge-pop { background: var(--green); }
 .value-stack {
   background: var(--white);
   border: 1.5px solid var(--border);
@@ -1612,14 +1608,48 @@ button { font-family: var(--body); cursor: pointer; }
   white-space: nowrap;
   cursor: pointer;
 }
+.sticky-variant-select {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255,255,255,.1);
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,.3);
+  border-radius: var(--r);
+  padding: 10px 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+.sticky-variant-select option { color: var(--ink); background: var(--white); }
 
-/* ─── FAMILIENSCHUTZ HERO ────────────────────────────────────────── */
+/* ─── ZWISCHEN-CTA: ZURÜCK ZUR VARIANTENAUSWAHL ─────────────────── */
+.jump-to-bundle-wrap { display: flex; justify-content: center; margin: 8px 0 0; }
+.jump-to-bundle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--steel);
+  border: 1.5px solid var(--steel);
+  border-radius: var(--r);
+  padding: 12px 22px;
+  font-family: var(--cond);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.jump-to-bundle-btn:hover { background: var(--steel); color: var(--white); }
+
+/* ─── BUNDLE-BOXEN: EINHEITLICHE GRÖSSE FÜR ALLE VARIANTEN ──────── */
 .bundle-opt.family-hero {
-  border-color: var(--steel);
-  border-width: 2.5px;
+  border-width: 2px;
   background: linear-gradient(135deg, #fff 0%, #f0f4f8 100%);
   position: relative;
+  min-height: 84px;
 }
+.bundle-opt.family-hero .bundle-price { min-height: 46px; display: flex; flex-direction: column; justify-content: center; }
 .bundle-opt.family-hero .bundle-name {
   color: var(--steel);
   font-size: 16px;
@@ -1819,20 +1849,21 @@ button { font-family: var(--body); cursor: pointer; }
         <div id="bundle">
           <div class="bundle-label">// Menge wählen</div>
 
-          <div class="bundle-opt" data-variant="58194976276805" onclick="pick(this)">
+          <div class="bundle-opt family-hero" data-variant="58194976276805" onclick="pick(this)">
             <div class="bundle-radio"><div class="bundle-dot"></div></div>
             <div class="bundle-info">
               <div class="bundle-name">1× Handyleine — „Eigenschutz"</div>
               <div class="bundle-desc">SC-001</div>
             </div>
             <div class="bundle-price">
+              <span class="bundle-p-old" style="visibility:hidden">13,80 €</span>
               <div class="bundle-p-main">13,80 €</div>
+              <div class="bundle-save" style="visibility:hidden">&nbsp;</div>
               <div class="bundle-per">13,80 € / Stück</div>
             </div>
           </div>
 
-          <div class="bundle-opt active family-hero" data-variant="58194976309573" onclick="pick(this)">
-            <div class="bundle-badge-pop">★ EMPFOHLEN — MEISTGEKAUFT</div>
+          <div class="bundle-opt family-hero" data-variant="58194976309573" onclick="pick(this)">
             <div class="bundle-radio"><div class="bundle-dot"></div></div>
             <div class="bundle-info">
               <div class="bundle-name">3× Handyleine — „Familienschutz"</div>
@@ -1846,7 +1877,8 @@ button { font-family: var(--body); cursor: pointer; }
             </div>
           </div>
 
-          <div class="bundle-opt" data-variant="58194976342341" onclick="pick(this)">
+          <div class="bundle-opt active family-hero" data-variant="58194976342341" onclick="pick(this)">
+            <div class="bundle-badge-pop">★ EMPFOHLEN — MEISTGEKAUFT</div>
             <div class="bundle-radio"><div class="bundle-dot"></div></div>
             <div class="bundle-info">
               <div class="bundle-name">5× Handyleine — „Rundum-Schutz"</div>
@@ -2136,6 +2168,9 @@ button { font-family: var(--body); cursor: pointer; }
         <span class="feat-pill">Mo–Sa · 8–22 Uhr</span>
       </div>
     </div>
+    <div class="jump-to-bundle-wrap">
+      <button class="jump-to-bundle-btn" onclick="scrollToBundle()">↑ Jetzt Variante auswählen</button>
+    </div>
   </div>
 </section>
 
@@ -2342,6 +2377,9 @@ button { font-family: var(--body); cursor: pointer; }
         <div class="seal-name">Geprüfte Sicherheit</div>
         <div class="seal-sub">Unabhängig getestet · 2025</div>
       </div>
+    </div>
+    <div class="jump-to-bundle-wrap">
+      <button class="jump-to-bundle-btn" onclick="scrollToBundle()">↑ Jetzt Variante auswählen</button>
     </div>
   </div>
 </section>
@@ -2551,6 +2589,9 @@ button { font-family: var(--body); cursor: pointer; }
     </div>
     </div>
     <button class="show-more" id="show-more-btn" onclick="showMoreReviews()">Weitere Bewertungen anzeigen ↓</button>
+    <div class="jump-to-bundle-wrap">
+      <button class="jump-to-bundle-btn" onclick="scrollToBundle()">↑ Jetzt Variante auswählen</button>
+    </div>
   </div>
 </section>
 
@@ -2682,11 +2723,12 @@ button { font-family: var(--body); cursor: pointer; }
 
 <!-- STICKY MOBILE -->
 <div class="sticky-bar">
-  <div class="sticky-price">
-    <div><span class="sticky-old">19,99 €</span><span class="sticky-disc">–31%</span></div>
-    <div class="sticky-main">13,80 €</div>
-  </div>
-  <button class="sticky-btn" onclick="scrollToBundle()">🔒 Jetzt schützen</button>
+  <select class="sticky-variant-select" id="stickyVariantSelect" onchange="pickFromSticky(this.value)">
+    <option value="58194976276805">1× Eigenschutz — 13,80 €</option>
+    <option value="58194976309573">3× Familienschutz — 27,60 €</option>
+    <option value="58194976342341">5× Rundum-Schutz — 41,40 €</option>
+  </select>
+  <button class="sticky-btn" onclick="addToCart(this)">🔒 Zur Kasse</button>
 </div>
 
 
@@ -2718,7 +2760,7 @@ button { font-family: var(--body); cursor: pointer; }
     '58194976342341': { rows:[['3× Handyleine','41,40 €'],['2× Handyleine GRATIS','free']], free:2, total:'41,40 €', ship:true }
   };
   function renderStack(variant){
-    var b = BUNDLES[variant] || BUNDLES['58194976309573'];
+    var b = BUNDLES[variant] || BUNDLES['58194976342341'];
     var rowsEl = document.getElementById('valueRows');
     if(rowsEl){
       rowsEl.innerHTML = b.rows.map(function(r){
@@ -2735,15 +2777,27 @@ button { font-family: var(--body); cursor: pointer; }
     document.querySelectorAll('.bundle-opt').forEach(function(o){ o.classList.remove('active'); });
     el.classList.add('active');
     renderStack(el.getAttribute('data-variant'));
+    syncStickySelect(el.getAttribute('data-variant'));
   }
-  // Init beim Laden (Familienschutz ist vorausgewählt)
+  function pickFromSticky(variantId){
+    var opt = document.querySelector('.bundle-opt[data-variant="'+variantId+'"]');
+    if(opt) pick(opt);
+  }
+  function syncStickySelect(variantId){
+    var sel = document.getElementById('stickyVariantSelect');
+    if(sel) sel.value = variantId;
+  }
+  // Init beim Laden (Rundum-Schutz ist vorausgewählt)
   document.addEventListener('DOMContentLoaded', function(){
     var a = document.querySelector('.bundle-opt.active');
-    if(a) renderStack(a.getAttribute('data-variant'));
+    if(a){
+      renderStack(a.getAttribute('data-variant'));
+      syncStickySelect(a.getAttribute('data-variant'));
+    }
   });
   function getVariantId(){
     var a = document.querySelector('.bundle-opt.active');
-    return a ? (a.getAttribute('data-variant') || '58194976309573') : '58194976309573';
+    return a ? (a.getAttribute('data-variant') || '58194976342341') : '58194976342341';
   }
   function addToCart(btn){
     window.location.href = 'https://bezahlung.schaefer-sicherheitstechnik.de/cart/' + getVariantId() + ':1';
@@ -2869,6 +2923,7 @@ button { font-family: var(--body); cursor: pointer; }
   })();
 
   window.pick = pick;
+  window.pickFromSticky = pickFromSticky;
   window.addToCart = addToCart;
   window.scrollToBundle = scrollToBundle;
   window.showMoreReviews = showMoreReviews;
