@@ -1913,7 +1913,7 @@ button { font-family: var(--body); cursor: pointer; }
         <p class="pay-note">Wir akzeptieren alle gängigen Zahlungsmittel — auch Kauf auf Rechnung &amp; Banküberweisung</p>
 
         <button class="cta-btn" onclick="addToCart(this)">
-          🔒 Jetzt Handy schützen
+          🔒 ZUR KASSE GEHEN
         </button>
 
         <div class="payment-row">
@@ -2766,7 +2766,7 @@ button { font-family: var(--body); cursor: pointer; }
       rowsEl.innerHTML = b.rows.map(function(r){
         var val = r[1]==='free' ? '<span class="v-free">GRATIS</span>' : '<span class="v-val">'+r[1]+'</span>';
         return '<div class="value-row"><span>'+r[0]+'</span>'+val+'</div>';
-      }).join('') + '<div class="value-row"><span>90 Tage Geld-zurück-Garantie</span><span class="v-free">inkl.</span></div>'
+      }).join('') + '<div class="value-row"><span>90 Tage Geld-zurück-Garantie</span><span class="v-free">GRATIS</span></div>'
         + (b.ship ? '<div class="value-row"><span>Versand</span><span class="v-free">GRATIS</span></div>' : '');
     }
     var t = document.getElementById('valueTotal'); if(t) t.textContent = b.total;
